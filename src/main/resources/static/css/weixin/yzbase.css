@@ -1,0 +1,808 @@
+.popover-delete, .popover-confirm {
+	width: 250px
+}
+
+.popover-delete .help-inline, .popover-confirm .help-inline {
+	padding-right: 20px;
+	font-size: 14px;
+	letter-spacing: 1px
+}
+
+.popover-delete .btn-success, .popover-delete .btn-primary,
+	.popover-confirm .btn-success, .popover-confirm .btn-primary {
+	margin-right: 3px
+}
+
+.popover-confirm {
+	width: auto
+}
+
+.popover-confirm .form-inline {
+	min-height: 20px
+}
+
+.popover-confirm .data-inline {
+	display: inline-block;
+	padding-left: 0;
+	padding-right: 6px;
+	line-height: 28px;
+	letter-spacing: 0;
+	font-size: 14px
+}
+
+.popover-confirm .popover-confirm-content {
+	margin: 10px -10px -10px -10px;
+	padding: 10px;
+	border-top: 1px solid #e5e5e5;
+	background: #f8f8f8;
+	text-align: left;
+	border-radius: 0 0 3px 3px
+}
+
+.popover-confirm-block .custom-template {
+	font-size: 12px;
+	text-align: left
+}
+
+.popover-confirm-block .custom-template label, .popover-confirm-block .custom-template input,
+	.popover-confirm-block .custom-template textarea {
+	font-size: 12px
+}
+
+.popover-confirm-block .popover-inner-group:not (:last-child ){
+	margin-bottom: 10px
+}
+
+.popover-confirm-block .popover-inner-group label {
+	margin: 0 !important
+}
+
+.popover-confirm-block .btn-action {
+	text-align: left;
+	margin-top: 10px
+}
+
+.popover-change {
+	width: 250px
+}
+
+.popover-change form {
+	margin: 0
+}
+
+.popover-template {
+	width: 850px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box
+}
+
+.popover-template .popover-content {
+	padding: 15px
+}
+
+.popover-template .popover-template-list li {
+	position: relative;
+	width: 150px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin-right: 15px;
+	background: #9b9b9b
+}
+
+.popover-template .popover-template-list li .template {
+	display: block;
+	width: 150px;
+	height: 200px;
+	background-size: cover
+}
+
+.popover-template .popover-template-list li .template-1 {
+	background-image: url("../image/pop/template/1.jpg")
+}
+
+.popover-template .popover-template-list li .template-2 {
+	background-image: url("../image/pop/template/2-2.jpg")
+}
+
+.popover-template .popover-template-list li .template-3 {
+	background-image: url("../image/pop/template/3-2.jpg")
+}
+
+.popover-template .popover-template-list li .template-4 {
+	background-image: url("../image/pop/template/4.jpg")
+}
+
+.popover-template .popover-template-list li .template-5 {
+	background-image: url("../image/pop/template/5.jpg")
+}
+
+.popover-template .popover-template-list li .popover-template-item-title
+	{
+	padding: 9px;
+	background: #f8f8f8
+}
+
+.popover-template .popover-template-list li .new {
+	position: absolute;
+	right: -5px;
+	top: -5px;
+	width: 25px;
+	height: 18px;
+	background: url("../image/new.png");
+	background-size: cover
+}
+
+.popover-template .popover-template-list li:last-child {
+	margin-right: 0
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5) , only screen and
+		(min--moz-device-pixel-ratio: 1.5) , only screen and
+		(-o-min-device-pixel-ratio: 3/2) , only screen and
+	(min-device-pixel-ratio: 1.5) {
+	.popover-template .popover-template-list li .new {
+		background-image: url("../image/new@2x.png")
+	}
+}
+
+.popover-memo {
+	z-index: 2000
+}
+
+.form-inline input.url-placeholder {
+	width: 195px;
+	font-size: 12px
+}
+
+.popover-link {
+	width: 315px
+}
+
+.popover-link input.link-placeholder {
+	font-size: 12px;
+	width: 172px
+}
+
+.popover-text {
+	width: auto
+}
+
+.popover-text form {
+	margin-bottom: 0
+}
+
+.popover-goods {
+	z-index: 10
+}
+
+.popover-send-goods {
+	width: 385px
+}
+
+.popover-send-goods form {
+	margin-bottom: 0
+}
+
+.popover-send-goods .form-horizontal .control-label {
+	width: 100px
+}
+
+.popover-send-goods .form-horizontal .controls {
+	margin-left: 110px
+}
+
+.popover-rename {
+	width: auto
+}
+
+.popover-rename .form-horizontal {
+	margin-bottom: 0
+}
+
+.popover-rename .form-horizontal .controls {
+	margin-left: 0
+}
+
+.popover-rename .form-horizontal .control-group {
+	margin-bottom: 0
+}
+
+.popover-category-wrap .arrow {
+	top: 33px !important
+}
+
+.popover-chosen-wrap {
+	z-index: 98
+}
+
+.popover-category, .popover-chosen {
+	overflow: visible;
+	width: 380px
+}
+
+.popover-category .select-wrap, .popover-chosen .select-wrap {
+	display: inline-block;
+	vertical-align: top;
+	width: 240px;
+	height: 28px
+}
+
+.popover-category .chosen-container-multi, .popover-chosen .chosen-container-multi
+	{
+	width: 240px !important
+}
+
+.popover-category .chosen-drop, .popover-chosen .chosen-drop {
+	border-top: 1px solid #aaa !important
+}
+
+.popover-chosen .btn-primary {
+	margin-left: 5px;
+	margin-right: 3px
+}
+
+.popover-help-notes, .popover-intro {
+	width: auto;
+	z-index: 1060
+}
+
+.popover-help-notes .popover-inner p, .popover-intro .popover-inner p {
+	line-height: 16px;
+	margin-bottom: 8px
+}
+
+.popover-help-notes .popover-inner p:last-of-type, .popover-intro .popover-inner p:last-of-type
+	{
+	margin-bottom: 0
+}
+
+.popover-help-notes.bottom:not (.center ) .arrow, .popover-intro.bottom:not
+	(.center ) .arrow {
+	margin-left: -5px
+}
+
+.popover-help-notes.bottom:not (.center ) .popover-inner, .popover-intro.bottom:not
+	(.center ) .popover-inner {
+	margin-left: -240px
+}
+
+.popover-intro .arrow {
+	display: none
+}
+
+.popover-intro .popover-inner {
+	padding: 1px;
+	border-radius: 2px;
+	background: #b3b3b3;
+	-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3)
+}
+
+.popover-intro .popover-content {
+	border-radius: 1px
+}
+
+.popover-memo {
+	width: 350px
+}
+
+.popover-memo .form-inline {
+	margin-bottom: 0
+}
+
+.popover-fans-tag {
+	width: 350px;
+	overflow: visible
+}
+
+.popover-fans-tag .form-inline {
+	margin-bottom: 0
+}
+
+.popover-thin {
+	width: 240px
+}
+
+.popover-thin .radio.inline {
+	padding-top: 0;
+	padding-bottom: 5px
+}
+
+.input-emotion-btn {
+	position: absolute;
+	right: 21px;
+	top: 21px;
+	cursor: pointer;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	border-radius: 3px;
+	width: 22px;
+	height: 22px;
+	background: url(../image/emoticons/1.png);
+	background-size: cover
+}
+
+.popover-qrcode {
+	width: 260px
+}
+
+.popover-qrcode .popover-content {
+	padding: 0
+}
+
+.popover-qrcode .popover-qrcode-content {
+	height: 200px
+}
+
+.popover-qrcode .popover-qrcode-header {
+	padding: 10px 15px;
+	border-bottom: 1px solid #E4E4E4
+}
+
+.popover-qrcode .scan-info {
+	text-align: center
+}
+
+.popover-qrcode .popover-qrcode-footer {
+	padding: 10px 15px
+}
+
+.popover-qrcode .close {
+	float: right;
+	margin-top: -3px
+}
+
+.popover-qrcode .qrcode-wrap {
+	width: 160px;
+	margin: 0 auto
+}
+
+.popover-qrcode .qrcode-wrap img {
+	height: 160px
+}
+
+.popover-select-city.at-right .popover-inner {
+	width: 455px;
+	margin-left: -300px
+}
+
+.popover-select-city .custom-template {
+	font-size: 14px
+}
+
+.popover-select-city .items-ul {
+	padding: 5px 0;
+	border-bottom: 1px solid #eee
+}
+
+.popover-select-city .items-ul:first-child {
+	margin-top: -5px
+}
+
+.popover-select-city .items-ul>li {
+	display: inline-block;
+	overflow: hidden;
+	vertical-align: top;
+	line-height: 24px
+}
+
+.popover-select-city .items-ul>li>span {
+	cursor: pointer;
+	display: inline-block;
+	margin-top: 2px;
+	margin-right: 5px;
+	padding: 0 4px;
+	border: 1px solid transparent;
+	border-radius: 3px;
+	text-shadow: none;
+	vertical-align: top;
+	line-height: 20px
+}
+
+.popover-select-city .items-ul>li>span:hover {
+	border-color: #ccc;
+	text-decoration: none
+}
+
+.popover-select-city .items-ul>li.active>span {
+	border-color: #789fcb;
+	color: #789fcb;
+	background: #fff
+}
+
+.popover-select-city .select-all label {
+	margin-top: 12px
+}
+
+.popover-select-city .select-all input {
+	margin-top: -1px;
+	margin-right: 3px
+}
+
+.popover-select-city .btn-action {
+	text-align: right
+}
+
+.filter-wrap {
+	margin-bottom: 18px;
+	font-size: 14px;
+	color: #333;
+	padding: 14px;
+	background: #f2f8fe
+}
+
+.filter-wrap.has-bar {
+	margin-bottom: 14px
+}
+
+.filter-wrap th {
+	width: 106px;
+	padding: 3px 9px 3px 0;
+	text-align: right;
+	vertical-align: top;
+	font-weight: normal;
+	line-height: 24px
+}
+
+.filter-wrap th i {
+	font-weight: normal;
+	font-style: normal
+}
+
+.filter-wrap td {
+	padding: 3px 0;
+	vertical-align: top;
+	line-height: 24px
+}
+
+.filter-wrap .btn-actions {
+	margin-top: 10px;
+	padding: 12px 0 0 115px;
+	border-top: 1px solid #d4e5f7
+}
+
+.filter-wrap .btn-actions .btn {
+	letter-spacing: 2px;
+	padding: 4px 14px 4px 16px
+}
+
+.filter-wrap .items-ul {
+	display: inline-block
+}
+
+.filter-wrap .items-ul>li {
+	display: inline-block;
+	overflow: hidden;
+	vertical-align: top;
+	line-height: 24px
+}
+
+.filter-wrap .items-ul>li>span {
+	cursor: pointer;
+	display: inline-block;
+	margin-top: 2px;
+	margin-right: 5px;
+	padding: 0 4px;
+	border: 1px solid transparent;
+	border-radius: 3px;
+	text-shadow: none;
+	vertical-align: top;
+	line-height: 20px
+}
+
+.filter-wrap .items-ul>li>span:hover {
+	border-color: #ccc;
+	text-decoration: none
+}
+
+.filter-wrap .items-ul>li.active>span {
+	border-color: #789fcb;
+	color: #789fcb;
+	background: #fff
+}
+
+.filter-wrap .items-ul>li.custom-more {
+	color: #789fcb
+}
+
+.filter-wrap .filter-time {
+	font-size: 12px
+}
+
+.filter-wrap .filter-time .input-medium {
+	width: 75px;
+	height: 16px;
+	margin: 0;
+	vertical-align: top
+}
+
+.filter-wrap .filter-time .items-ul {
+	margin-top: 0;
+	margin-left: 2px;
+	font-size: 14px
+}
+
+.filter-wrap .filter-time .items-ul>li {
+	font-size: 12px
+}
+
+.filter-wrap .filter-time .items-ul>li>span {
+	color: #07d;
+	line-height: 21px;
+	padding-bottom: 0
+}
+
+.filter-wrap .filter-time .quickday {
+	margin-left: 13px;
+	font-size: 12px
+}
+
+.ui-datepicker td a {
+	width: 19px !important
+}
+
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next {
+	width: 22px !important
+}
+
+p.error-message {
+	color: #b94a48;
+	font-size: 12px;
+	margin: 5px 0 0
+}
+
+input.error-message, input.error-message:focus {
+	border-color: #b94a48
+}
+
+.app-fans-level .list-wrap td .td-cont, .app-fans-points .list-wrap td .td-cont,
+	.app-fans-tag .list-wrap td .td-cont {
+	padding-top: 9px;
+	padding-bottom: 9px
+}
+
+.form-horizontal .controls {
+	font-size: 14px
+}
+
+.form-horizontal .controls input {
+	font-size: 14px
+}
+
+.form-horizontal .controls .radio input[type="radio"] {
+	margin-top: 4px
+}
+
+.form-horizontal .form-actions.the-new {
+	margin-top: 30px;
+	border-top: none;
+	background: #ffc
+}
+
+.app-fans-points .table td.opts {
+	width: 200px
+}
+
+.app-fans-points-edit .checkbox {
+	color: #999;
+	margin-left: 16px
+}
+
+.app-fans-search .filter-wrap form {
+	margin: 0
+}
+
+.app-fans-search .filter-wrap th {
+	width: 96px
+}
+
+.app-fans-search .filter-wrap .items-ul>li>span {
+	margin-top: 1px
+}
+
+.app-fans-search .filter-wrap .btn-actions {
+	padding-left: 105px
+}
+
+.app-fans-search .widget-nav {
+	font-size: 14px
+}
+
+.app-fans-search .ui-table-list td.opts {
+	width: 160px
+}
+
+.app-fans-search .ui-table-list td.td-username {
+	width: 90px;
+	word-break: break-all
+}
+
+.app-fans-search .ui-table-list td.td-level {
+	width: 90px
+}
+
+.app-fans-search .ui-table-list td.time {
+	width: 72px
+}
+
+.app-fans-search .ui-table-list .td-thumb img {
+	background: #ddd
+}
+
+.app-fans-search .ui-table-list .td-thumb .td-cont {
+	position: relative
+}
+
+.app-fans-search .ui-table-list .td-thumb .fans-died {
+	position: absolute;
+	z-index: 5;
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+	font-weight: bold;
+	font-size: 14px;
+	color: #666;
+	cursor: default;
+	background: rgba(255, 255, 255, 0.7)
+}
+
+.app-fans-search .ui-table-list .td-thumb .list-item-select {
+	z-index: 3;
+	cursor: default;
+	width: 28px;
+	height: 28px;
+	bottom: 5px
+}
+
+.app-fans-search .ui-table-list .td-thumb .list-item-select input[type="checkbox"]
+	{
+	cursor: default
+}
+
+.app-fans-search .pagenavi {
+	margin: 15px 0 100px
+}
+
+.app-fans-search .pagenavi .batch-opts {
+	float: left;
+	text-align: left
+}
+
+.app-fans-search .pagenavi .batch-opts .caret {
+	margin-top: 13px;
+	border-top-color: #999
+}
+
+.app-fans-search .pagenavi .batch-opts .dropdown {
+	z-index: 5;
+	margin-left: 9px;
+	font-size: 14px
+}
+
+.app-fans-search .pagenavi .batch-opts .dropdown>a {
+	line-height: 28px
+}
+
+.app-fans-search .no-res-cont {
+	padding-top: 60px;
+	min-height: 90px;
+	border: 1px solid #e4e4e4;
+	font-size: 16px;
+	text-align: center;
+	color: #999
+}
+
+.fans-search-basic .filter-wrap input.txt {
+	width: 150px;
+	height: 16px;
+	margin: 0 6px 0 0
+}
+
+.popover-confirm-block {
+	z-index: 10
+}
+
+.popover-confirm-block .pop-group-title {
+	padding-left: 1px;
+	margin-bottom: 5px !important
+}
+
+.popover-single-opt-level .popover-inner {
+	width: 222px;
+	margin-left: -150px
+}
+
+.popover-single-opt-level .form-inline {
+	height: 28px
+}
+
+.popover-batch-opt-level .popover-inner {
+	width: 222px;
+	margin-left: 160px
+}
+
+.popover-batch-opt-level .form-inline {
+	height: 51px
+}
+
+.popover-single-opt-tag .popover-inner, .popover-filter-more-level .popover-inner,
+	.popover-filter-more-user-tag .popover-inner {
+	width: 261px;
+	margin-left: -180px
+}
+
+.popover-single-opt-tag .form-inline, .popover-filter-more-level .form-inline,
+	.popover-filter-more-user-tag .form-inline {
+	min-height: 75px
+}
+
+.popover-batch-opt-tag .popover-inner {
+	width: 261px;
+	margin-left: 200px
+}
+
+.popover-batch-opt-tag .form-inline {
+	display: inline-block;
+	width: 100%;
+	min-height: 100px
+}
+
+.popover-single-opt-point .popover-inner {
+	width: 290px;
+	margin-left: -210px
+}
+
+.popover-single-opt-point textarea {
+	width: 210px;
+	margin-top: -3px;
+	vertical-align: top
+}
+
+.popover-single-opt-point input[type='checkbox'] {
+	margin: -2px 0 0 5px
+}
+
+.popover-single-opt-point input[type='text'] {
+	width: 120px
+}
+
+.popover-single-opt-point .btn-action {
+	margin-left: 36px
+}
+
+.popover-batch-opt-point .popover-inner {
+	width: 240px;
+	margin-left: 179px
+}
+
+.popover-batch-opt-point textarea {
+	width: 210px;
+	margin-top: -3px;
+	vertical-align: top
+}
+
+.popover-batch-opt-point input[type='checkbox'] {
+	margin: -2px 0 0 5px
+}
+
+.popover-batch-opt-point input[type='text'] {
+	width: 120px
+}
+
+.popover-filter-num-to-num .popover-inner {
+	margin-left: -190px
+}
+
+.popover-filter-num-to-num input[type='text'] {
+	width: 48px
+}
+
+.popover-filter-custom-date .popover-inner {
+	margin-left: -190px
+}
+
+.popover-filter-custom-date input[type='text'] {
+	width: 62px
+}
+

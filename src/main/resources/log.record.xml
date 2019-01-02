@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<logs>
+	<!-- 日志记录对应关系 -->
+	<log class="cn.mauth.ccrm.core.domain.xwqr.SysUser" txt="用户管理">
+		<actionFeild property="dbid" value="用户ID"></actionFeild>
+	</log>
+	<log class="cn.mauth.ccrm.core.domain.xwqr.SysRole" txt="角色管理">
+		<actionFeild property="dbid" value="角色管理ID"></actionFeild>
+	</log>
+	<log class="cn.mauth.ccrm.core.domain.xwqr.SysDepartment" txt="部门管理">
+		<actionFeild property="dbid" value="部门ID"></actionFeild>
+	</log>
+	<log class="cn.mauth.ccrm.core.domain.xwqr.SysArtificer" txt="技师管理">
+		<actionFeild property="dbid" value="技师ID"></actionFeild>
+	</log>
+	<log class="cn.mauth.ccrm.core.domain.xwqr.SysRoom" txt="房间管理">
+		<actionFeild property="dbid" value="房间ID"></actionFeild>
+	</log>
+	<log class="cn.mauth.ccrm.core.domain.set.SetCouponMemberTemplate" txt="优惠券模板管理">
+		<actionFeild property="dbid" value="优惠券模板ID"></actionFeild>
+	</log>
+	<log class="cn.mauth.ccrm.core.domain.set.SetCouponMemberTemplateItem" txt="优惠券模板项目管理">
+		<actionFeild property="dbid" value="惠券模板项目ID"></actionFeild>
+	</log>
+	<log class="cn.mauth.ccrm.core.domain.set.SetCouponMemberTemplateProduct" txt="惠券模板商品管理">
+		<actionFeild property="dbid" value="惠券模板商品ID"></actionFeild>
+	</log>
+	<log class="cn.mauth.ccrm.core.domain.set.SetDiscountType" txt="优惠类型">
+		<actionFeild property="dbid" value="优惠类型ID"></actionFeild>
+	</log>
+	<log class="cn.mauth.ccrm.core.domain.set.SetEntItem" txt="经销商项目管理">
+		<actionFeild property="dbid" value="经销商项目ID"></actionFeild>
+	</log>
+	<log class="cn.mauth.ccrm.core.domain.set.SetEntProduct" txt="经销商商品管理">
+		<actionFeild property="dbid" value="经销商商品ID"></actionFeild>
+	</log>
+	<log class="cn.mauth.ccrm.core.domain.set.SetItem" txt="项目管理">
+		<actionFeild property="dbid" value="项目ID"></actionFeild>
+	</log>
+	<log class="cn.mauth.ccrm.core.domain.set.SetItemType" txt="项目类型管理">
+		<actionFeild property="dbid" value="项目类型ID"></actionFeild>
+	</log>
+	
+	<log class="cn.mauth.ccrm.core.domain.set.SetPayWay" txt="支付方式管理">
+		<actionFeild property="dbid" value="支付方式ID"></actionFeild>
+	</log>
+	<log class="com.ystech.set.model.Product" txt="商品管理">
+		<actionFeild property="dbid" value="商品ID"></actionFeild>
+	</log>
+	<log class="cn.mauth.ccrm.core.domain.set.SetProductCategory" txt="商品类型管理">
+		<actionFeild property="dbid" value="商品类型ID"></actionFeild>
+	</log>
+	<log class="cn.mauth.ccrm.core.domain.mem.MemCoupon" txt="会员优惠券管理">
+		<actionFeild property="dbid" value="会员优惠券ID"></actionFeild>
+	</log>
+	<log class="cn.mauth.ccrm.core.domain.mem.Mem" txt="会员管理">
+		<actionFeild property="dbid" value="会员ID"></actionFeild>
+	</log>
+	<log class="cn.mauth.ccrm.core.domain.mem.MemCard" txt="会员卡管理">
+		<actionFeild property="dbid" value="会员卡ID"></actionFeild>
+	</log>
+	<log class="cn.mauth.ccrm.core.domain.mem.MemCardDisItem" txt="会员卡优惠项目管理">
+		<actionFeild property="dbid" value="会员卡优惠项目ID"></actionFeild>
+	</log>
+	<log class="cn.mauth.ccrm.core.domain.mem.MemCardDisProduct" txt="会员卡优惠商品管理">
+		<actionFeild property="dbid" value="会员卡优惠商品ID"></actionFeild>
+	</log>
+	<log class="cn.mauth.ccrm.core.domain.mem.Memlevel" txt="会员等级管理">
+		<actionFeild property="dbid" value="会员等级ID"></actionFeild>
+	</log>
+	<log class="cn.mauth.ccrm.core.domain.mem.MemOrder" txt="会员支付订单管理">
+		<actionFeild property="dbid" value="会员支付订单ID"></actionFeild>
+	</log>
+	<log class="cn.mauth.ccrm.core.domain.mem.MemOnceEntItemCard" txt="会员次卡管理">
+		<actionFeild property="dbid" value="会员次卡ID"></actionFeild>
+	</log>
+	<log class="cn.mauth.ccrm.core.domain.mem.MemPointRecord" txt="会员积分管理">
+		<actionFeild property="dbid" value="会员积分ID"></actionFeild>
+	</log>
+	<log class="cn.mauth.ccrm.core.domain.mem.MemStartWriting" txt="开单管理">
+		<actionFeild property="dbid" value="开单ID"></actionFeild>
+	</log>
+
+	<log class="cn.mauth.ccrm.core.domain.mem.MemStartWritingItem" txt="开单项目管理">
+		<actionFeild property="dbid" value="开单项目ID"></actionFeild>
+	</log>
+	<log class="cn.mauth.ccrm.core.domain.mem.MemStartWritingProduct" txt="开单产品管理">
+		<actionFeild property="dbid" value="开单产品ID"></actionFeild>
+	</log>
+	<log class="cn.mauth.ccrm.core.domain.mem.MemStoreMoneyRecord" txt="会员卡储值管理">
+		<actionFeild property="dbid" value="会员卡储值ID"></actionFeild>
+	</log>
+	<log class="cn.mauth.ccrm.core.domain.mem.MemStormMoneyCard" txt="会员卡储值管理">
+		<actionFeild property="dbid" value="会员卡储值ID"></actionFeild>
+	</log>
+	<log class="cn.mauth.ccrm.core.domain.mem.MemStormMoneyOnceEntItemCard" txt="会员项目次卡储值管理">
+		<actionFeild property="dbid" value="员项目次卡储值ID"></actionFeild>
+	</log>
+	
+	
+</logs>

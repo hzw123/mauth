@@ -1,0 +1,568 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+	background: url(/css/wechat/img/1.jpg);
+	width:100%;  
+    height:100%;  
+    background-size:100% 100%;  
+}
+a{
+	text-decoration: none;
+}
+.clear {
+	clear: both;
+}
+
+.head {
+	background: url(../images/weixin/headBg_02.png) repeat-x;
+	height: 50px;
+	clear: both;
+}
+
+.title {
+	font-size: 14px;
+	color: #FFF;
+	float: left;
+	font-weight: bold;
+	margin-left: 10px;
+	line-height: 50px;
+}
+
+.titlePhone {
+	float: right;
+}
+
+.titlePhone a {
+	text-decoration: none;
+	display: block;
+	outline: none;
+}
+
+.titlePhone a:ACTIVE {
+	text-decoration: none;
+	display: block;
+	outline: none;
+}
+
+.titlePhone img {
+	margin-top: 6px;
+	margin-right: 10px;
+	border: 0px;
+}
+
+.formContent {
+	font-size: 14px;
+	color: #747474;
+	margin: 12px 12px;
+	background: #FFF;
+	border: 1px solid #c7c7c7;
+	border-radius: 8px;
+}
+.itemContent{
+	  border-width: 1.333px;
+	  border-color: rgb( 197, 197, 197 );
+	  border-style: solid;
+	  border-radius: 10px;
+	  background-image: -moz-linear-gradient( -90deg, rgb(255,255,255) 0%, rgb(209,209,209) 50%, rgb(219,219,219) 50%, rgb(220,220,220) 100%);
+	  background-image: -webkit-linear-gradient( -90deg, rgb(255,255,255) 0%, rgb(209,209,209) 50%, rgb(219,219,219) 50%, rgb(220,220,220) 100%);
+	  background-image: -ms-linear-gradient( -90deg, rgb(255,255,255) 0%, rgb(209,209,209) 50%, rgb(219,219,219) 50%, rgb(220,220,220) 100%);
+	  cursor: pointer;
+	  height: 40px;
+}
+.itemContent h3{
+	padding:0;margin:0;padding-left: 12px;font-size: 14px;font-weight: bold;color: #3f3d3d;line-height: 40px;
+}
+.leftPre{
+	float: right;
+	background-image: url("../images/weixin/leftPre.png");
+	background-repeat:no-repeat;
+	width: 10px;
+	height: 15px;
+	margin-right: 12px;
+	margin-top: 12px;
+}
+.dataDiv {
+	height: 30px;
+	display: table;
+	overflow: visible;
+	position: relative;
+	width: 100%;
+	margin: 12px 5px;
+	line-height: 30px;
+}
+.coupon_select {
+    background: url("../images/weixin/selectBtnBg_05.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #C0BDBD;
+    height: 34px;
+    line-height: 32px;
+    margin: 13px 60px;
+}
+.coupon_select a {
+    color: #5D5B5B;
+    float: left;
+    font-size: 14px;
+    line-height: 34px;
+    text-align: center;
+    text-shadow: 0.5px 0.866px 1px #FFFFFF;
+    width: 49%;
+    text-decoration: none;
+}
+
+.coupon_list {
+    background-image: -moz-linear-gradient(90deg, #C5C5C5 2%, #F3F3F3 3%, #E1E1E1 53%, #F1F1F1 54%, #FFFFFF 98%, #BFBFBF 100%);
+    background-image: -webkit-linear-gradient(90deg, #C5C5C5 2%, #F3F3F3 3%, #E1E1E1 53%, #F1F1F1 54%, #FFFFFF 98%, #BFBFBF 100%);
+    background-image: -ms-linear-gradient(90deg, #C5C5C5 2%, #F3F3F3 3%, #E1E1E1 53%, #F1F1F1 54%, #FFFFFF 98%, #BFBFBF 100%);
+    border: 1px solid #D8D8D8;
+    border-radius: 5px;
+    height: 78px;
+    margin: 0 8px 8px;
+}
+.coupon_list_img{
+    float: left;
+    margin: 8px 10px;
+}
+.coupon_list_img_p {
+    color: #373636;
+    float: left;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    height: 40px;
+    margin-top: 14px;
+}
+
+.coupon_list_img_p span {
+    color: #686868;
+    font-size: 10px;
+}
+.scoreSelect {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E1E2;
+    border-radius: 8px;
+    height: 40px;
+    margin: 16px 18px;
+}
+
+.scoreSelect a{
+    color: #949393;
+    float: left;
+    font-size: 14px;
+    line-height: 38px;
+    text-align: center;
+    width: 32%;
+}
+.score_select_line {
+    float: left;
+    width: 2%;
+}
+.score_select_linel {
+    background-color: #E7E7E7;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 5px;
+    width: 1px;
+}
+.explanContent{
+	margin: 5px; border: 1px solid #D8D8D8;margin: -12px 8px 10px;background-color:  #E1E1E1;padding: 0px 12px;display: none;
+}
+.score_show {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E1E2;
+    border-radius: 5px;
+    clear: both;
+    color: #898888;
+    font-size: 14px;
+    height: 40px;
+    line-height: 38px;
+    margin: 0 18px;
+    padding: 0;
+}
+
+.score_show_available {
+    float: left;
+    margin-left: 16px;
+}
+
+.score_show_consume {
+    float: right;
+    margin-right: 16px;
+}
+
+.score_list {
+    background-color: #FFFFFF;
+    border: 1px solid #BFBFBF;
+    border-radius: 5px;
+    color: #898888;
+    margin: 18px;
+    text-align: center;
+}
+
+.score_list_head {
+    background-color: #32B16C;
+    border-radius: 5px;
+    color: #333333;
+    font-size: 14px;
+    height: 40px;
+}
+
+.score_list_head th {
+    font-weight: bold;
+}
+
+.score_list td {
+    font-size: 14px;
+    height: 30px;
+    padding-right: 5px;
+    width: 33%;
+}
+.score_list .left{
+	padding-left: 5px;text-align: left;
+}
+
+
+.order_title {
+    background-color: #626262;
+    border: 1px solid #E7E7E7;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    margin: 14px;
+    text-align: center;
+}
+
+.order_title_arrow {
+    background: url("../images/weixin/arrow_05.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    height: 13px;
+    margin: 15px 40px;
+    position: absolute;
+    width: 17px;
+}
+
+.order_box {
+    background-color: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    border-radius: 5px;
+    line-height: 10px;
+    margin: 10px 14px;
+}
+
+.order_box_head {
+    background: url("../images/weixin/orderHead_05.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+    border-radius: 5px;
+    color: #4B4C4D;
+    font-size: 12px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+.order_box {
+    line-height: 10px;
+}
+
+.order_box_main p {
+    color: #6B6C6D;
+    font-size: 12px;
+    text-align:left;
+    padding-left: 12px;
+}
+.btn_get {
+    background-image: -moz-linear-gradient(90deg, #6DA509 0%, #6EA615 50%, #8FBF37 100%);
+    background-image: -webkit-linear-gradient(90deg, #6DA509 0%, #6EA615 50%, #8FBF37 100%);
+    background-image: -ms-linear-gradient(90deg, #6DA509 0%, #6EA615 50%, #8FBF37 100%);
+    border-radius: 5px;
+    color: #FFFDFD;
+    float: right;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 5px;
+    margin-top: 20px;
+    padding: 0 5px;
+}
+
+.redeem_box {
+    background-image: -moz-linear-gradient( 90deg, rgb(197,197,197) 0%, rgb(243,243,243) 1%, rgb(225,225,225) 53%, rgb(241,241,241) 54%, rgb(255,255,255) 98%, rgb(191,191,191) 100%);
+  background-image: -webkit-linear-gradient( 90deg, rgb(197,197,197) 0%, rgb(243,243,243) 1%, rgb(225,225,225) 53%, rgb(241,241,241) 54%, rgb(255,255,255) 98%, rgb(191,191,191) 100%);
+  background-image: -ms-linear-gradient( 90deg, rgb(197,197,197) 0%, rgb(243,243,243) 1%, rgb(225,225,225) 53%, rgb(241,241,241) 54%, rgb(255,255,255) 98%, rgb(191,191,191) 100%);
+    border: 1px solid #D8D8D8;
+    border-radius: 5px;
+    font-family: "Microsoft YaHei";
+    margin: 12px 8px;
+    padding: 8px 10px;
+     z-index: 2;
+}
+
+.redeem_title_p {
+    color: #373636;
+    float: left;
+    font-size: 14px;
+}
+.redeem_title_pp {
+    color: #686868;
+    float: right;
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+.redeem_line {
+    background: none repeat scroll 0 0 #C4C4C4;
+    float: left;
+    height: 1px;
+    margin: 3px 0;
+    width: 100%;
+}
+
+.redeem_sbox {
+    margin: 5px 0;
+}
+
+.redeem_sbox_p {
+    float: left;
+    font-size: 12px;
+}
+.redeem_btn {
+    background-image: -moz-linear-gradient(90deg, #6DA509 0%, #6EA615 50%, #8FBF37 100%);
+    background-image: -webkit-linear-gradient(90deg, #6DA509 0%, #6EA615 50%, #8FBF37 100%);
+    background-image:  -ms-linear-gradient(90deg, #6DA509 0%, #6EA615 50%, #8FBF37 100%);
+    border-radius: 2px;
+    color: #FFFDFD;
+    float: right;
+    font-size: 10px;
+    line-height: 20px;
+    padding: 2px 11px;
+}
+.redeem_img {
+    border: 1px solid #E1E0E6;
+    float: left;
+    margin: 5px 0;
+    width: 100%;
+    height: 80px;
+}
+.dataDiv:AFTER {
+	clear: both;
+}
+
+.centerHead {
+    background: url("/css/wechat/img/11.png") ;
+    height: 180px;
+}
+
+.center_head_info {
+    color: #FFFFFF;
+    font-size: 14px;
+    margin: 0 auto;
+    text-align: center;
+    width: 64px;
+}
+
+.center_head_info img {
+    margin-top: 8px;
+}
+.center_head_infos {
+    margin-top: -1px;
+}
+.center_head_infos ul {
+    display: inline;
+    list-style-type: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+}
+
+.center_head_menu_p {
+    color: #FFFFFF;
+    float: left;
+    font-size: 14px;
+    line-height: 34px;
+    text-align: center;
+    width: 32%;
+}
+.center_head_menu {
+    background-color: #000000;
+    height: 45px;
+    margin-top: -17px;
+    opacity: 0.71;
+    position: absolute;
+    top: 120px;
+    width: 100%;
+}
+.col{
+	width: 33%;
+	text-align: center;
+	border-right: 1px solid #FFF;
+	margin-top: 5px;
+	margin-bottom:5px;
+	height: 35px;
+	float: left;
+	color: #FFF;
+	cursor: pointer;
+}
+.col span{
+	display: block;widows: 100%;font-size: 14px;
+}
+.col ul {
+    display: inline;
+    list-style-type: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+}
+.col ul li{
+	padding: 0;
+	margin: 0;
+}
+.noneLine{
+	border-right: 0px solid #FFF;
+}
+.dataDiv label {
+	width: 70px;
+	display: block;
+	text-align: right;
+	float: left;
+	line-height: 30px;
+}
+
+select {
+	width: 85px;
+}
+
+.dataDiv input {
+	height: 28px;
+	border-radius: 5px;
+	border: 1px solid #c7c7c7;
+	margin-left: 12px;
+	float: left;
+	width: 182px;
+}
+
+.dataDiv textarea {
+	border-radius: 3px;
+	border: 1px solid #c7c7c7;
+	margin-left: 12px;
+	float: left;
+	width: 180px;
+}
+
+.list img {
+	margin: 18px auto;
+}
+
+.button {
+	background-image: url("../images/weixin/btn_bg_05.png");
+	background-repeat: repeat-x;
+	padding: 0px 28px;
+	height: 48px;
+	text-align: center;
+	border-radius: 5px;
+	line-height: 48px;
+	margin: 0 auto;
+	width: 180px;
+}
+
+.button a {
+	color: #fff;
+	font-size: 16px;
+	text-decoration: none;
+}
+.content{
+	margin: 12px auto;width: 100%;
+}
+.content a{
+	text-decoration: none;
+}
+/**会员表单样式信息 开始**/
+.memberInput{
+		margin:0 12px;height: 40px;margin-bottom: 12px;
+	}
+.memberLabel{
+	margin:0 12px;height: 24px;
+}
+.memberInput input[type="text"],input[type="date"]{
+	border: 1px solid #C7C7C7;
+    border-radius: 5px;
+    float: left;
+    height: 32px;
+    width: 100%;
+}
+.frist{
+	margin-bottom: 20px;height: 20px;
+}
+/**会员表单样式信息 结束**/
+.item{
+	background-color: #434343;height: 58px;border-radius:8px;margin: 0 auto;line-height: 58px;margin: 12px 30px;margin-top: 40px;
+}
+.itemImage{
+	width: 38px;
+	height: 38px;
+	margin-left: 20px;
+	position: absolute;
+	margin-top: 10px;
+}
+.address {
+	background-image: url('../images/weixin/address.png');
+}
+.call{
+	background-image: url('../images/weixin/call.png');
+}
+.itemTitle{
+	color: #54cbec;margin-left: 72px;font-size: 18px;font-family: 微软雅黑;font-weight: bold;
+}
+.item::AFTER{
+	margin-bottom: 50px;
+}
+
+.alert {
+	background-color: #FCF8E3;
+	border: 1px solid #FBEED5;
+	border-radius: 5px;
+	color: #C09853;
+	margin-bottom: 2px;
+	padding: 8px 35px 8px 14px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	margin-top: 2px;
+}
+
+.alert-success {
+	background-color: #DFF0D8;
+	border-color: #D6E9C6;
+	color: #468847;
+}
+
+.alert-info {
+	background-color: #D9EDF7;
+	border-color: #BCE8F1;
+	color: #3A87AD;
+}
+
+.alert-danger,.alert-error {
+	background-color: #F2DEDE;
+	border-color: #EED3D7;
+	color: #B94A48;
+}
+
+.bottom_menu {
+    background-color: #27241D;
+    border: 2px solid #27241D;
+    height: 40px;
+    margin-top: 15px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+}
+.bottom_menu_p {
+    color: #C9C7C7;
+    float: left;
+    font-size: 16px;
+    line-height: 40px;
+    text-align: center;
+    width: 49%;
+}
+.bottom_menu_p  a{
+	color: #C9C7C7;
+	text-decoration: none;
+}

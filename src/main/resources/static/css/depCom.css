@@ -1,0 +1,336 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background:#f8f8f8;
+	margin:0px;
+	padding:0px;
+	font-family:"微软雅黑",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+    line-height: 20px;
+}
+ul {
+	list-style-type:none;
+}
+a {
+	text-decoration:none;
+}
+.clear{
+	clear: both;
+}
+.bodycolor{
+	background-color: #f1f1f1;
+}
+.location {
+	font-size:12px;
+	height:40px;
+	line-height: 40px;
+	margin-left: 10px;
+}
+.location a{
+	color:#767474;
+}
+.line2 {
+	background:#e5e5e5;
+	height:1px;
+	width:100%;
+}
+/*********系统按钮  样式 开始***********/
+.postbutton {
+	clear:both;
+	width:193px;
+	margin-left:110px;
+}
+.but{
+	color: #ffffff;
+	font-size:13px;
+	padding: 5px 20px;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	margin-right: 20px;
+}
+.button{
+	background:url(../images/button.png) repeat-x;
+}
+.button a{
+	color:#FFF;
+}
+.butSave {
+	background:url(../images/but_save.png) repeat-x;
+}
+.butCancle {
+	background:url(../images/but_cancle.png) repeat-x;
+}
+/***********系统按钮  样式 结束************/
+/**表单页面 样式 开始**/
+.frmContent{
+	background-color: #f8f8f8;;
+    border: 1px solid #f8f8f8;
+    border-radius: 4px;
+    color: #767474;
+    padding: 8px 35px 8px 14px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+.frmContent from table{
+	width: 92%;
+	border: 1px solid  #CCCCCC;
+	border-bottom: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC
+}
+.frmContent form table tr{
+	height: 40px;
+}
+.frmContent form table tr td{
+	padding-left: 12px;
+}
+.formTableTdLeft{
+	width: 100px;
+	font-size: 13px;
+    font-weight: normal;
+}
+
+.text {
+	height:24px;
+	border:1px solid #e3e3ee;
+	background-color:#FFF;
+	color: #555555;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 24px;
+    padding-left: 5px;
+}
+.textarea{
+	height: 80px;
+}
+.success{
+	border-color: #468847;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #468847;
+}
+.error{
+	border-color: #B94A48;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #B94A48;
+}
+.small{
+	width: 80px;
+}
+.midea{
+	width: 120px;
+}
+.mideaX{
+	width: 160px;
+}
+.mideaXX{
+	width: 200px;
+}
+.large{
+	width: 240px;
+}
+.largeX{
+	width: 280px;
+}
+.largeXX{
+	width: 320px;
+}
+.formButton{
+	width: 92%;
+	margin: 0 auto;
+	padding-left: 24px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+/*表单样式 结束*/
+
+/*页面头部 样式表 开始*/
+.head {
+	background:url(../images/headbg.png) repeat-x;
+	height:71px;
+}
+.logo {
+	background:url(../images/logo.png) no-repeat;
+	width:105px;
+	height:58px;
+	margin-top:7px;
+	float:left;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+.head_nav {
+	margin-left:10px;
+	margin-top:20px;
+	float:left;
+	font-size:16px;
+	font-weight:600;
+	color:#5b5555;
+}
+.head_nav a{
+	letter-spacing:2px;
+	color:#5b5555;
+	float: left;
+    margin-right:35px;
+	padding-bottom:5px;
+}
+.head_nav a:hover {
+    color: #46A0DE;
+    text-decoration: none;
+}
+.head_nav a.active{
+	border-bottom:4px solid #39F;
+}
+.head_nav a.active:hover{
+	color:#5b5555;
+}
+/*页面头部 样式表 结束*/
+
+/***数据列表 样式开始***/
+.listOperate {
+	font-size:14px;
+    color:#FFF;
+    height: 30px;
+    margin-left: 10px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+.operate{
+	float: left;
+	margin-top: 3px;
+}
+.seracrhOperate{
+	float: right;
+}
+.searchTable{
+	color: #767474;
+}
+.searchTable label{
+	margin-right: 5px;
+}
+.searchIcon {
+	background:url(../images/searchicon.png) no-repeat;
+	width:32px;
+	height:28px;
+	cursor: pointer;
+}
+
+/******系统提示信息样式***********/
+.alert {
+    background-color: #FCF8E3;
+    border: 1px solid #FBEED5;
+    border-radius: 4px;
+    color: #C09853;
+    margin-bottom: 20px;
+    padding: 8px 35px 8px 14px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+.alert-success {
+    background-color: #DFF0D8;
+    border-color: #D6E9C6;
+    color: #468847;
+}
+.alert-info {
+    background-color: #D9EDF7;
+    border-color: #BCE8F1;
+    color: #3A87AD;
+}
+
+.alert-danger, .alert-error {
+    background-color: #F2DEDE;
+    border-color: #EED3D7;
+    color: #B94A48;
+}
+.alert-block {
+    padding-bottom: 14px;
+    padding-top: 14px;
+}
+.depDiv{
+	width: 625px;overflow: hidden;
+}
+.fillBox{
+	margin-left: -8px;
+}
+.fillAddr{
+    background: none repeat scroll 0 0 #E5E5E5;
+    border-radius: 2px;
+    cursor: default;
+    float: left;
+    margin: 5px 7px 2px 8px;
+    padding: 0 5px;
+    white-space: nowrap;
+}
+.fillAddr b{
+	font-weight: normal;
+}
+.addrDel {
+    background: url("../images/bizmail/ico_biz0c07e5.png") no-repeat scroll -60px 3px rgba(0, 0, 0, 0);
+    border-radius: 2px;
+    display: inline-block;
+    height: 13px;
+    margin: -3px 0 0 -4px;
+    overflow: hidden;
+    vertical-align: middle;
+    width: 13px;
+}
+/*文件上传功能模块*/
+.uploadFileContent{
+	width: 400px;font-size: 12px;
+}
+.fileContent{
+	width: background: #F6F6F6;padding: 0px 5px 5px 5px;float: left;
+}
+/* Error */
+.red {
+	border: solid 1px #B50000;
+	background-color: #FFEBEB;
+}
+.thumbnail{
+	float:left;width:30px;height:30px;background-image: url('${ctx}/widgets/SWFUpload/images/word.jpg');
+}
+.uploadFile{
+	padding-left:4px;float: left;
+}
+.fileName{
+	
+}
+.fileName  b{
+	font-weight: bold;cursor: pointer;width: 200px;
+}
+.fileName  a{
+	float: right;
+	cursor:pointer;
+}
+.uploadState{
+	
+}
+.uploadState .stateError{
+	padding-left: 2px;color: red;
+}
+.stateSuccess{
+	padding-left: 2px;color: blue;
+}
+.uploadState .stateWating{
+	color: blue;
+}
+.progressbar{ 
+	border:1px solid #333; height:5px; background:#fff; width: 80px;float: left;
+	margin-top: 4px;margin-bottom: 4px;
+}
+.progress{ 
+	background:#999; width:20%; height:5px; 
+}
+.amount{
+ padding-left: 5px;
+}
+.amount span{
+	padding-right: 5px;
+}
+/*附件信息查看列表样式*/
+.attach{
+	width: 480px;
+	font-size: 12px;
+}
+.attachOne{
+	height: 24px;
+	margin: 2px 5px 2px 5px;float: left;
+}
+.attach b{
+	font-weight: normal;line-height: 24px;
+}

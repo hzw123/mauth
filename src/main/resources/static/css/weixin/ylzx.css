@@ -1,0 +1,937 @@
+@CHARSET "UTF-8";
+body{
+	font-size: 14px;
+	font-family: '微软雅黑','serif';
+	color: #686868;
+	background-color: #FFFFFF;
+	/* background:url(../../img/weixin/bg_05.png) repeat; */
+}
+img {
+	border: 0 px;
+}
+a {
+	text-decoration: none;
+}
+body, h1, h2, h3, p, div, dl, dt, dd, ul, ol, li, table, th, td, form, button, input, textarea, legend, hr {
+    margin: 0;
+    padding: 0;
+}
+.clear{
+	clear: both;
+}
+.banner {
+	height:160px;
+	width: 100%;
+}
+
+.itemConent {
+	margin-top:5px;
+	text-align:center;
+	width: 100%;
+}
+.itemLeft{
+	float: left;
+	width: 120x;
+	border-top:2px solid #ec6941;
+}
+.head {
+	background-color:#ec6941;
+	height:35px;
+	font-size:14px;
+	font-weight:bold;
+	line-height:35px;
+	color:#FFF;
+	cursor: pointer;
+}
+.btn_left td {
+	background:url(../../img/weixin/btn_bg.jpg);
+	border-right:1px solid #CCC;
+	border-top:1px solid #ccc;
+	width:33%;
+	height: 35px;	
+	cursor: pointer;
+}
+.btn_right td {
+	background:url(../../img/weixin/btn_bg.jpg);
+	width:33%;
+	border-left:1px solid #CCC;
+	border-top:1px solid #ccc;
+	height:35px;
+	cursor: help;
+}
+.carTip{
+	color: #FFC7B3;font-size: 20px;
+	margin: 0 auto;
+	margin-top: -50px;  
+	font-weight: bold;
+	font-style: italic;
+	width: 20px;height: 20px;
+	position: relative;
+	left: 20px;	
+}
+/*轮播样式*/
+.swipe{
+	width:100%;
+	margin:0 auto;
+	height: 160px;
+	overflow: hidden;
+	position:relative;
+}
+.swipe .swipe-wrap{
+	text-align:center;
+	overflow:hidden;
+	position:relative;
+}
+.swipe .swipe-wrap > li {
+	float:left;
+	width: 100%;
+	position:relative;
+	list-style: none;
+}
+#position{
+	text-align:center;
+	position: relative;
+	bottom: 25px;
+}
+#position li{
+	width:10px;
+	height:10px;
+	margin:0 5px;
+	display:inline-block;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	background-color:#AFAFAF;
+}
+#position li.cur{background-color:#FF0000;}
+
+/*公共样式*/
+.headRed{
+	background:#fba191;
+	width:100%;
+	height:50px;
+	display: block;
+}
+.headPink{
+	background:#FFA8B4;
+	width:100%;
+	height:50px;
+	display: block;
+}
+.btn_back {
+	float:left;
+	margin-top: 10px;
+	cursor: pointer;
+	width: 20%;
+}
+.btn_back img{
+	width:13px;
+	height:18px;
+	margin-left: 15px;
+	padding-top: 5px;
+}
+.head_title {
+	color:#fff;
+	float:left;
+	font-size:18px;
+	width: 60%;
+	text-align: center;
+	line-height: 48px;
+
+}
+
+.btn_user {
+	float:right;
+    margin-top: 10px;
+    width: 20%;
+    text-align: right;
+    cursor: pointer;
+}
+.btn_user img{
+	width: 22px;
+	height: 22px;
+	margin-right: 15px;
+	padding-top: 3px
+}
+
+.menu{
+	background:url(../../img/weixin/menu_bg.png) repeat-x;	
+	filter:alpha(opacity=80);
+  	-moz-opacity:0.8;
+  	-khtml-opacity: 0.8;
+  	opacity: 0.8;
+	position: fixed; 
+	bottom: 0; 
+	left: 0; 
+	right: 0; 
+	margin: auto; 
+	height:50px;
+	width: 100%;
+}
+.menu ul{
+	list-style-type:none;
+    margin:0;
+	padding:0;
+	overflow:hidden;
+}
+.menu ul li {
+	float:left;
+	width: 33%;
+	text-align: center;
+	height: 50px;
+}
+.menu ul li a{
+	height: 40px;
+	line-height: 40px;
+	padding: 0px;
+	margin: 0px;
+}
+.menu ul li img{
+	line-height: 40px;
+	margin-top:5px;
+	margin-bottom: 5px;
+}
+
+.line {
+	margin:5px 8px 12px 5px;
+	height:1px;
+	background-color:#999;
+}
+
+/* 首页模板二  start */
+.indexbox{
+	float:left;
+	width: 49.8%;
+	text-align: center;
+	height: auto;
+}
+.box {
+    color: #FFFFFF;
+    font-size: 12px;
+    width:100%;
+    height: auto;
+}
+.box img {
+    padding-top: 15px;
+    width: 40px;
+   	height: 40px; 
+}
+.box p{
+	font-size: 12px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+
+/*商品详情*/
+.picPannel{
+	width:100%;
+	background:#444443;
+	overflow:hidden;
+}
+.picPannel img{
+	margin:8px 5px;
+	border-radius:5px;
+	border: 2px solid #64635E;
+	float: left;
+	width: 200px;
+	height: 200px;
+}
+
+.qb_hr {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #999999 -moz-use-text-color #FFFFFF;
+    border-image: none;
+    border-left: 0 none;
+    border-right: 0 none;
+    border-style: solid none;
+    border-width: 1px 0;
+    border: 0;
+	border-top: 1px solid #999999;
+	border-bottom: 1px solid #FFF;
+	clear: both;
+}
+.productColor{
+	width: 100%;
+}
+
+.down{
+	width: 60px;height: 20px;
+}
+.up{
+	width: 60px;height: 20px;
+}
+.ptitle{
+	height: 24px;line-height: 24px;margin: 5px 0px;float: left;text-align: center;
+}
+.category{
+	border: 1px solid #BDB2AB; background-color: white;padding: 0px 20px;margin: 5px;float: left;
+}
+.categoryChocie{
+	border: 1px solid #FF4A00;background-color: #FF4A00;color:white;padding: 0px 20px;margin: 5px;float: left;
+}
+.productColor a{
+	display: inline-block;
+	width: 30px;
+	height: 24px;
+	line-height:24px;
+	background: #EFEEEC;
+	text-decoration: none;
+	text-align: center;
+	color: #706E69;
+	border: 1px solid #ccc;
+}
+.disabled,.disabled:hover {
+	color: #ccc;
+	border-color: #ccc;
+}
+.productColor input {
+	width: 48px;
+	height:25px;
+	text-align: center;
+	color: #666;
+	border: 1px solid #CCCCCC;
+}
+.toCar{
+	float:left;
+	margin-left:24px;
+	text-align:center;
+	color:#FFFFFF;
+	padding:8px 20px;
+	background-color: #FF9A84;
+	border-radius:5px;
+}
+.toShop{
+	margin-right:24px;
+	float:right;
+	text-align:center;
+	padding:8px 20px;
+	color:#FFFFFF;
+	background-color: #FF9A84;
+	border-radius:5px;
+}
+.toCar a,.toShop a{
+	color: white;
+}
+
+#note {
+	position: relative;
+	margin-top: 6px;
+	padding: 4px;
+	margin-left:36px;
+	line-height: 16px;
+	min-height:16px;
+	width:150px;	
+	border: 1px solid #FEC3A8;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-ms-border-radius: 2px;
+	-o-border-radius: 2px;
+	border-radius: 2px;
+	background: white;
+}
+#note b,
+#note i {
+	position: absolute;
+	left: 52px;
+	width: 18px;
+	height: 7px;
+	font: 16px/21px Simsun;
+	overflow: hidden;
+}
+#note b {
+	top: -8px;
+	color: #FEC3A8;
+}
+#note i {
+	top: -7px;
+	color: white;
+}
+#note em {
+	font-size: 12px;
+	font-style: normal;
+	color: #F40;
+}
+.hide {
+	display: none;
+}
+.show {
+	display: block;
+}
+
+.STYLE1 {color: #FF0000}
+.STYLE2 {color: gray;text-decoration: line-through;}
+
+/*商品分类*/
+.lan {
+	width:100%;height: 80px;border-bottom: 1px solid #999;
+	display: block;cursor: pointer;
+}
+.itemImg{
+	float: left;
+	margin:20px 10px 10px 10px;
+	text-align:center;
+	border-radius:5px;
+	width: 40px;
+	height: 40px;
+}
+.itemImg img{
+	margin:5px;
+	width: 30px;
+	height: 30px;
+}
+.itemContent{
+	float: left;
+	height: 80px;
+	margin-left: 8px;
+}
+.itemContentTitle{
+	margin: 20px 12px 5px 5px;font-size: 14px;font-weight: bold;
+}
+.itemContentCon{
+	margin: 8px 12px 5px 5px;font-size: 12px;
+}
+.itemSlide{
+	float: right;
+	height: 70px;
+}
+.itemSlideImage{
+	background-image: url("../../img/weixin/leftPre.png");
+	background-repeat:no-repeat; 
+	width: 10px;
+	height: 15px;
+	margin-top: 30px;
+	margin-right: 12px;
+}
+.itemSlideImageDown{
+	background-image: url("../../img/weixin/arrowDown.png");
+	background-repeat:no-repeat; 
+	width: 15px;
+	height: 10px;
+	margin-top: 38px;
+	margin-right: 12px;
+}
+.lan_text {
+	float:left;
+	text-align:center;
+}
+.lan_text th {
+	font-size:20px;
+	color:#333;
+	font-weight:300;
+}
+.lan_text td {
+	font-size:15px;
+	padding-top:6px;
+	color:#666;
+}
+.lan_arrow {
+	line-height:55px;
+	padding-right: 12px;
+}
+.lan_line {
+	height:1px;
+	width:100%;
+	background:#999;
+}
+.lanOpen {
+	background:#333;
+	width:100%;
+	margin:0px 0px 12px 0px;
+	display: none;
+	padding-bottom: 5px;
+}
+.lanContent {
+	float:left;
+	width: 25%;
+	cursor: pointer;
+}
+.lanImg{
+	background-color: #fff;
+	text-align:center;
+	border-radius:5px;
+	margin: 5px;
+	padding: 5px;
+}
+.lanImg img {
+	width:80%;
+	height:60px;
+}
+.lanContent p{
+	color:#FFF;
+	width: 100%;
+	font-size:12px;
+	text-align: center;
+	margin-top: 5px;
+}
+
+/*收货地址管理*/
+.receivers{
+	background-color:#F8F8F7;
+	border:1px solid #B9B4AE;
+	margin: 15px 12px;
+	padding: 5px 0px;
+}
+
+.receivers p{
+	margin-left: 10px;
+	font-size: 13px;
+	height: 20px;
+	line-height: 20px;
+}
+.receiverUpdate{
+	float: left;
+	margin-left: 18px;
+	height: 22px;
+	line-height: 22px;
+	width:25%;
+	text-align: center;
+	background-color:#FF9A84;
+	padding: 2px 20px;
+}
+.receiverDelete{
+	float: right;
+	margin-right: 18px;
+	height: 22px;
+	line-height: 22px;
+	width:25%;
+	text-align: center;
+	background-color:#FFAA51;
+	padding: 2px 20px;
+}
+.receiverUpdate a,.receiverDelete a{
+	color: white;
+}
+.btn_add{
+	width:60%;
+	height:35px;
+	line-height:35px;
+	margin:0px auto;
+	background-color:#FF9A84;
+	text-align:center;
+	color:#FFFFFF;
+	margin-top:15px;
+}
+.btn_add a{
+	color: white;
+}
+.isDefault{
+	float: right;margin-top: 13px;margin-right: 20px;
+}
+.isDefault a{
+	color:#FF6B4C;
+}
+.noneAddress{
+	font-size:small;
+	color:#CCCCCC;
+	text-align:center;
+	margin-top: 20px;
+}
+/*新增收货地址*/
+.mian{
+	width:90%;
+	margin:0px auto;
+}
+.receiver{
+	margin-top: 30px;
+	width:100%;
+}
+.receiver input{
+	width: 95%;
+	
+}
+.btn_save {
+	border-radius:5px;
+	width:90%;
+	height:36px;
+	line-height:36px;
+	margin:0px auto;
+	background:#FF856B;
+	text-align:center;
+	color:#FFFFFF;
+	margin-top:30px;
+}
+.btn_save a{
+	color: #fff;
+}
+.btn_save a:hover{
+	color: white;
+	text-decoration: none;
+}
+
+/*提交订单*/
+.shxx{
+	background:#FFFFFF center;
+	margin:0px auto;
+	font-size:x-small;
+	border:1px solid #CCCCCC;
+	padding:10px;
+	margin-top:10px;
+	height: 30px;
+}
+.pull-down{
+	background:#FFFFFF center;
+	margin:0px auto;
+	border:1px solid #CCCCCC;
+	padding:10px;
+	margin-top:10px;
+}
+.spxx{
+	background:#F8F8F7 center;
+	font-size:small;
+	margin:0px auto;
+	border:1px solid #CCCCCC;
+	padding:10px;
+	margin-top:10px;
+}
+
+.selectContent{
+	background:#F8F8F7 center;
+	margin:12px;
+	font-size:small;
+	border:1px solid #CCCCCC;
+	padding:12px 5px;
+	margin-top:10px;
+}
+.selectContent select{
+	width: 100%;
+}
+.btn_tjdd{
+	margin:0px auto;
+	background:#fba191;
+	padding:8px 20px;
+	text-align:center;
+	color:#FFFFFF;
+	border-radius:5px;
+	font-size:14px;
+	width: 80%;
+}
+.btn_tjdd a{
+	color: white;
+}
+
+
+
+
+/* 会员中心 */
+.center_head {
+	background:url(../../img/weixin/topPic.png) repeat-x;
+	width:100%;
+	height: 120px;
+}
+.center_head_info {
+	float:left;
+	width:100%；;
+	padding: 16px;
+}
+.center_img{
+	margin-left: 12px;
+	width:57px;
+	height:57px;
+	float: left;
+}
+.center_info{
+	margin-left:12px;
+	float: left;
+	height:100%;
+	font-size: 12px;
+}
+.customName{
+	float: left;
+	padding-top:5px;
+	padding-left:5px;
+	margin-bottom:5px;
+	height:20px;
+	width: 100%;
+	color: white;
+}
+.receiverManage a{
+	border:1px solid white;
+	border-radius:15px;
+	font-size: 12px;
+	padding:2px;
+	color: white;
+	padding: 2px 5px;
+}
+.center_head_menu {
+	background-color:rgba(255,255, 255, 0.2);
+    position: absolute;
+    top:130px;
+    width:100%;
+    height:40px;
+}
+.center_head_menu a{
+	color: #FFFFFF;
+}
+.center_head_menu_line {
+    width:2%;
+	float:left;
+}
+.center_head_menu_linel {
+	background-color:#FF9A84;
+	opacity: 0.5;
+	width:1px;	
+	height:40px;	
+}
+.center_head_menu_p {
+	float:left;
+	width:32%;
+	text-align:center;
+    line-height:40px;
+    height:40px;
+    font-size: 14px;
+}
+.center_head_menu_p span{
+	margin-left: 4px;
+	color:rgba(255,0, 0, 0.4);
+}
+
+/*待付款*/
+.cannerOrder{
+	float:left;
+	margin-left:14px;
+	text-align:center;
+	padding:5px 8px;
+	background-color: #fba191;
+	border-radius:5px;
+}
+.toPay{
+	margin-right:14px;
+	float:right;
+	text-align:center;
+	padding:5px 8px;
+	background-color:#fba191;
+	border-radius:5px;
+}
+.toPay a,.cannerOrder a{
+	color: white;
+}
+
+
+/*购物车*/
+.car_main{
+	margin:15px 2px 5px 5px;
+}
+.box_pic {
+	float:left;
+	width: 33%;
+}
+.box_productDetails {
+	float:left;
+	padding: 10px;
+}
+.productName{
+	font-size: 14px;
+}
+.productSize,.productColor{
+	margin-top:7px;
+	font-size: 12px;
+	
+}
+.productPrice,.productSum{
+	margin-top:7px;
+	font-size: 13px;
+}
+
+.box_delete {
+	float:right;
+	margin-right: 5px;
+	height: 110px;
+	display: inline;
+}
+.num{
+	text-align:center;
+	height:24px;
+	width: 24px;
+	position: relative;
+	top:12px;	
+	margin:0 10px;
+}
+.delete{
+	position:relative;
+	background-color:#FFAA51;
+	color:white;
+	height: 24px;
+	text-align:center;
+	border-radius:5px;
+	top: 30px;
+	line-height: 24px;
+	padding: 2px 5px;
+	cursor: pointer;
+}
+.allClick,.freight,.sumPrice{
+	float: left;
+	width: 48%;
+}
+.allClick{
+	padding-left: 6px;
+}
+.car_tjdd{
+	float: right;
+	margin-top:10px;
+	margin-right: 8px;
+	background-color:#FF9A84;
+	height: 25px;
+	line-height:25px;
+	text-align: center;
+	border-radius:5px;
+	padding:5px 20px;
+	color: white;
+	cursor: pointer;
+}
+.car_pic {
+	border:1px solid #d2d2d2;
+	float: left;
+	width: 90px;
+	height: 90px;
+	margin-left:5px;
+	text-align: center;
+}
+.car_pic img{
+	background-image: url("../../img/weixin/productDefault.png");
+	width: 80px;
+	height: 90px;
+}
+
+/*商品分类fenlei-click*/
+.productCategoryTbox {
+	float:left;
+	display: block;
+	width: 50%;
+	height:125px;
+	padding-top:10px;
+	text-align: center;
+	margin-bottom: 8px;
+}
+.productCategory{
+	width:90%;
+	border-left:1px solid #FFC37A;
+	border-right:1px solid #FFC37A;
+	border-top:1px solid #FFC37A;
+	margin: 0 auto;
+}
+.prodcutName{
+	width: 100%;
+	height:28px;
+	margin-top: -25px;
+	color:#fff;
+	line-height:28px;
+	background-color: #FFC37A;
+	filter:alpha(opacity=90);
+  	-moz-opacity:0.9;
+  	-khtml-opacity: 0.9;
+  	opacity: 0.9;
+}
+
+/*商品*/
+.tbox {
+	float:left;
+	display: block;
+	width: 50%;
+	padding-top: 10px;
+}
+.prodcutCont{
+	width:90%;
+	background-color: #F8F8F7;
+  	border:1px solid #E1E1E1;
+  	margin: 0 auto;
+}
+.prodcutImg{
+	width: 90%;
+	background-color: #fff;
+	height: 116px;
+	margin: 0 auto;
+	margin-top:8px;
+	text-align: center;
+	
+}
+.prodcutImg img{
+	 height:116px;
+	 width:96px;
+}
+.prodcutContName{
+	font-size:14px;
+	padding-left: 5px;
+	cursor: pointer;
+	line-height: 150%;
+	margin: 5px;
+}
+
+.prodcutContPrice{
+	color:#FF694D;
+	font-size:14px;
+	font-weight:bold;
+	padding: 0px 5px 5px 5px;
+}
+
+
+.prodcutCat{
+	background-color: rgb( 255, 255, 255 );
+  	box-shadow: 0.5px 0.5px 5px 0px rgb( 12, 8, 10 );
+  	margin: 5px 5px 10px 5px;
+  	cursor: pointer;
+}
+.prodcutCatItemSlide{
+	float: right;
+	height: 40px;
+}
+.prodcutCatItemSlideImg{
+    background-image: url("../../img/weixin/leftPre.png");
+    background-repeat: no-repeat;
+    height: 15px;
+    margin-right: 12px;
+    margin-top: 12px;
+    width: 10px;
+}
+.prodcutCat img{
+	width: 146px;
+	height: 146px;
+	margin: 0 auto;
+}
+.prodcutCat p{
+	color:#09F;
+	font-size:14px;
+	font-weight:bold;
+}
+.faceSmall{
+	width: 107px;height: 107px;margin: 0 auto;background-image: url('../../img/weixin/faceSmall.png');margin-top: 50px;
+}
+.emptyCar{
+	width: 107px;height: 107px;margin: 0 auto;background-image: url('../../img/weixin/emptycar.png');margin-top: 50px;
+}
+.faceTip{
+	margin: 0 auto;margin-top: 12px;font-size: 14px;width: 200px;text-align: center;
+}
+.shoping{
+	text-align: center;margin: 0 auto;font-size: 14px;color: white;padding: 5px 20px;background-color: #FF9A84;width: 80px;margin-top: 30px;cursor: pointer;
+}
+.alert {
+	background-color: #FCF8E3;
+	border: 1px solid #FBEED5;
+	border-radius: 5px;
+	color: #C09853;
+	margin-bottom: 2px;
+	padding: 8px 35px 8px 14px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	margin-top: 2px;
+}
+
+.alert-success {
+	background-color: #DFF0D8;
+	border-color: #D6E9C6;
+	color: #468847;
+}
+
+.alert-info {
+	background-color: #D9EDF7;
+	border-color: #BCE8F1;
+	color: #3A87AD;
+}
+
+.alert-danger,.alert-error {
+	background-color: #F2DEDE;
+	border-color: #EED3D7;
+	color: #B94A48;
+}

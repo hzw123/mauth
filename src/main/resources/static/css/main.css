@@ -1,0 +1,38 @@
+﻿.location {
+	font-size:14px;
+	height:40px;
+	line-height: 40px;
+	margin-left: 10px;
+    border-bottom:1px solid #e5e5e5;
+    margin-bottom:5px;
+}
+
+/***数据列表 样式开始***/
+.line {
+	background:#e5e5e5;
+	height:1px;
+	width:100%;
+}
+
+  .layui-btn-xs {
+    height: 22px;
+    line-height: 22px;
+    padding: 0 5px;
+    font-size: 12px;
+}
+
+.div-search{
+    float:right;
+    margin:10px;
+}
+
+.layui-container{
+    width:100%;
+}
+
+.card-gather{
+    width:30%;
+    border-right:1px solid red
+}
+
+.hr-line-dashed{border-top:1px dashed #e7eaec;color:#fff;background-color:#fff;height:1px;margin:20px 0}

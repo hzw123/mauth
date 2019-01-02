@@ -1,0 +1,70 @@
+body {
+    font-family: "微软雅黑";
+    font-size: 12px;
+    text-align: left;
+}
+/*文件上传功能模块*/
+.uploadFileContent{
+	width: 400px;font-size: 12px;
+}
+.fileContent{
+	width: background: #F6F6F6;padding: 0px 5px 5px 5px;float: left;
+}
+/* Error */
+.red {
+	border: solid 1px #B50000;
+	background-color: #FFEBEB;
+}
+.thumbnail{
+	float:left;width:30px;height:30px;
+}
+.uploadFile{
+	padding-left:4px;float: left;
+}
+.fileName{
+	
+}
+.fileName  b{
+	font-weight: bold;cursor: pointer;width: 200px;
+}
+.fileName  a{
+	float: right;
+	cursor:pointer;
+}
+.uploadState{
+	
+}
+.uploadState .stateError{
+	padding-left: 2px;color: red;
+}
+.stateSuccess{
+	padding-left: 2px;color: blue;
+}
+.uploadState .stateWating{
+	color: blue;
+}
+.progressbar{ 
+	border:1px solid #333; height:5px; background:#fff; width: 80px;float: left;
+	margin-top: 4px;margin-bottom: 4px;
+}
+.progress{ 
+	background:#999; width:20%; height:5px; 
+}
+.amount{
+ padding-left: 5px;
+}
+.amount span{
+	padding-right: 5px;
+}
+/*附件信息查看列表样式*/
+.attach{
+	width: 480px;
+	font-size: 12px;
+}
+.attachOne{
+	height: 24px;
+	margin: 2px 5px 2px 5px;float: left;
+}
+.attach b{
+	font-weight: normal;line-height: 24px;
+}
