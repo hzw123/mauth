@@ -3,7 +3,6 @@ package cn.mauth.ccrm.core.domain.set;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -29,7 +28,7 @@ public class SetProductCategory implements Serializable{
 	@Column(columnDefinition = "text",length = 2000)
 	private String note;
 
-	@OneToMany(fetch = FetchType.LAZY)
+	@OneToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "set_product_category_set_product",
 	joinColumns = {@JoinColumn(name = "set_product_category_id")},
 	inverseJoinColumns = {@JoinColumn(name = "set_product_id")})

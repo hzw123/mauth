@@ -32,7 +32,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/entItem")
 public class EntItemController extends BaseController{
-	private static final String VIEW="/set/entItem/";
+	private static final String VIEW="set/entItem/";
 	@Autowired
 	private EntItemServer entItemServer;
 	@Autowired
@@ -94,7 +94,7 @@ public class EntItemController extends BaseController{
 		} catch (Exception e) {
 			log.error(e.getMessage());
 		}
-		return redirect(VIEW,"itemList");
+		return redirect(VIEW+"itemList");
 	}
 
 
@@ -159,7 +159,7 @@ public class EntItemController extends BaseController{
 
 		model.addAttribute("itemTypes",itemTypes);
 
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 	@RequestMapping("/queryJson")
@@ -188,7 +188,7 @@ public class EntItemController extends BaseController{
 
 	@RequestMapping("/add")
 	public String add() throws Exception {
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 
@@ -202,7 +202,7 @@ public class EntItemController extends BaseController{
 			SetEntItem entItem2 = entItemServer.get(dbid);
 			model.addAttribute("entItem",entItem2);
 		}
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 

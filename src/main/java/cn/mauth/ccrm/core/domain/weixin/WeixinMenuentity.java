@@ -22,7 +22,7 @@ public class WeixinMenuentity implements java.io.Serializable {
 	private String type;//click or view
 	private String url;//如果view url不能为空
 	private String accountid;
-	@OneToMany
+	@OneToMany(fetch = FetchType.EAGER)
 	@JoinColumn(name = "father_id")
 	private Set<WeixinMenuentity> weixinMenuentities;
 	//菜单类型：1、默认菜单；2、个性化菜单；

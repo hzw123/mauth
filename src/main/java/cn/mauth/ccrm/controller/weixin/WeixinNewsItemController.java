@@ -31,7 +31,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/weixinNewsItem")
 public class WeixinNewsItemController extends BaseController{
 
-	private static final String VIEW="/weixin/weixinNewsItem/";
+	private static final String VIEW="weixin/weixinNewsItem/";
 	@Autowired
 	private WeixinNewstemplateServer weixinNewstemplateServer;
 	@Autowired
@@ -51,18 +51,18 @@ public class WeixinNewsItemController extends BaseController{
 			model.addAttribute("weixinNewstemplates", weixinNewstemplates);
 		}
 
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 
 	@RequestMapping("/add")
 	public String add(){
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 	@RequestMapping("/addMore")
 	public String addMore(){
-		return redirect(VIEW,"addMore");
+		return redirect(VIEW+"addMore");
 	}
 
 
@@ -80,7 +80,7 @@ public class WeixinNewsItemController extends BaseController{
 				}
 			}
 		}
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 	@RequestMapping("/editMore")
@@ -89,7 +89,7 @@ public class WeixinNewsItemController extends BaseController{
 			WeixinNewsTemplate weixinNewstemplate = weixinNewstemplateServer.get(dbid);
 			model.addAttribute("weixinNewstemplate", weixinNewstemplate);
 		}
-		return redirect(VIEW,"editMore");
+		return redirect(VIEW+"editMore");
 	}
 
 
@@ -234,7 +234,7 @@ public class WeixinNewsItemController extends BaseController{
 			});
 			model.addAttribute("weixinNewstemplates", weixinNewstemplates);
 		}
-		return redirect(VIEW,"selectNewsItem");
+		return redirect(VIEW+"selectNewsItem");
 	}
 
 	@ResponseBody

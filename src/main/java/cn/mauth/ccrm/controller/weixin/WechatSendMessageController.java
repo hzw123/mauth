@@ -34,7 +34,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/wechatSendMessage")
 public class WechatSendMessageController extends BaseController{
 
-	private static final String VIEW="/weixin/wechatSendMessage/";
+	private static final String VIEW="weixin/wechatSendMessage/";
 	private int openLenght=10000;
 	@Autowired
 	private WechatSendMessageServer wechatSendMessageServer;
@@ -73,10 +73,10 @@ public class WechatSendMessageController extends BaseController{
 				return null;
 			},wechatSendMessageServer.getPageRequest(pageable)));
 
-			model.addAttribute("templates", page);
+			model.addAttribute("page", page);
 		}
 
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 
@@ -91,7 +91,7 @@ public class WechatSendMessageController extends BaseController{
 			WeixinWechatNewsTemplate template = wechatNewsTemplateServer.get(wechatNewsTemplateId);
 			model.addAttribute("WeixinNewsTemplate", template);
 		}
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 
@@ -102,7 +102,7 @@ public class WechatSendMessageController extends BaseController{
 			WeixinSendMessage wechatSendMessage = wechatSendMessageServer.get(dbid);
 			model.addAttribute("wechatSendMessage", wechatSendMessage);
 		}
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 
@@ -584,7 +584,7 @@ public class WechatSendMessageController extends BaseController{
 			List<WeixinWechatNewsTemplate> weixinNewstemplates = wechatNewsTemplateServer.getRepository().findByAccountId(weixinAccount.getDbid());
 			model.addAttribute("weixinNewstemplates", weixinNewstemplates);
 		}
-		return redirect(VIEW,"selectNewsItem");
+		return redirect(VIEW+"selectNewsItem");
 	}
 
 	/**

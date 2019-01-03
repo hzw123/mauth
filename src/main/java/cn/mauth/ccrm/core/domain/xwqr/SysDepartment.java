@@ -37,7 +37,7 @@ public class SysDepartment implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "parent_id")
 	private SysDepartment parent;
-	@OneToMany
+	@OneToMany(fetch = FetchType.EAGER)
 	@JoinColumn(name = "parent_id")
 	private Set<SysDepartment> children;
 	@ManyToOne

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/systemInfo")
 public class SystemInfoController extends BaseController{
 
-	private static final String VIEW="/sys/systemInfo/";
+	private static final String VIEW="sys/systemInfo/";
 	@Autowired
 	private SystemInfoServer systemInfoServer;
 
@@ -24,7 +24,7 @@ public class SystemInfoController extends BaseController{
 		if(null!=systemInfos&&systemInfos.size()>0){
 			model.addAttribute("systemInfo", systemInfos.get(0));
 		}
-		return redirect(VIEW,"systemInfo");
+		return redirect(VIEW+"systemInfo");
 	}
 
 	@RequestMapping("/save")

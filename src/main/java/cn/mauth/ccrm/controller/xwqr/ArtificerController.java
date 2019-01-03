@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/artificer")
 public class ArtificerController extends BaseController {
 
-	private static final String VIEW="/sys/artificer/";
+	private static final String VIEW="sys/artificer/";
 	@Autowired
 	private ArtificerServer artificerServer;
 
@@ -36,9 +36,9 @@ public class ArtificerController extends BaseController {
 			return cb.equal(root.get("enterpriseId"),enterprise.getDbid());
 		},artificerServer.getPageRequest(pageable)));
 
-		model.addAttribute("templates", page);
+		model.addAttribute("page", page);
 
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 	@RequestMapping("/edit")
@@ -47,7 +47,7 @@ public class ArtificerController extends BaseController {
 			SysArtificer artificer = artificerServer.get(dbid);
 			model.addAttribute("artificer", artificer);
 		}
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 	@PostMapping("/save")

@@ -33,7 +33,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/item")
 public class ItemController extends BaseController {
-	private static final String VIEW="/set/item/";
+	private static final String VIEW="set/item/";
 	@Autowired
 	private ItemServer itemServer;
 	@Autowired
@@ -47,7 +47,7 @@ public class ItemController extends BaseController {
 		List<SetItemType> itemTypes = itemTypeServer.findByEnterpriseIdOrder();
 
 		model.addAttribute("itemTypes", itemTypes);
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 	@ResponseBody
@@ -76,7 +76,7 @@ public class ItemController extends BaseController {
 
 	@RequestMapping("/add")
 	public String add() throws Exception {
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 	@RequestMapping("/edit")
@@ -93,7 +93,7 @@ public class ItemController extends BaseController {
 			SetItem item2 = itemServer.get(dbid);
 			model.addAttribute("item", item2);
 		}
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 

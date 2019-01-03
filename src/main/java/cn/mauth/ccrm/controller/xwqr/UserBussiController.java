@@ -38,7 +38,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/userBussi")
 public class UserBussiController extends BaseController{
 
-	private static final String VIEW="/sys/userBussi/";
+	private static final String VIEW="sys/userBussi/";
 	@Autowired
 	private UserServer userServer;
 	@Autowired
@@ -94,8 +94,8 @@ public class UserBussiController extends BaseController{
 			return cb.and(param.toArray(new Predicate[param.size()]));
 		},departmentServer.getPageRequest(pageable)));
 
-		model.addAttribute("templates", page);
-		return redirect(VIEW,"bussiList");
+		model.addAttribute("page", page);
+		return redirect(VIEW+"bussiList");
 	}
 	
 	/**
@@ -110,7 +110,7 @@ public class UserBussiController extends BaseController{
 			List<SysEnterprise> enterprises = enterpriseServer.findAll();
 			model.addAttribute("enterprises", enterprises);
 		}
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 	
 	/**
@@ -121,7 +121,7 @@ public class UserBussiController extends BaseController{
 		List<SysEnterprise> enterprises = enterpriseServer.findAll();
 
 		model.addAttribute("enterprises", enterprises);
-		return redirect(VIEW,"add");
+		return redirect(VIEW+"add");
 	}
 	
 	/**
@@ -132,7 +132,7 @@ public class UserBussiController extends BaseController{
 		List<SysEnterprise> enterprises = enterpriseServer.findAll();
 
 		model.addAttribute("enterprises", enterprises);
-		return redirect(VIEW,"addComm");
+		return redirect(VIEW+"addComm");
 	}
 	
 	/**
@@ -151,7 +151,7 @@ public class UserBussiController extends BaseController{
 
 		model.addAttribute("enterprises", enterprises);
 
-		return redirect(VIEW,"editComm");
+		return redirect(VIEW+"editComm");
 	}
 	
 
@@ -457,7 +457,7 @@ public class UserBussiController extends BaseController{
 		model.addAttribute("resources", resources);
 
 
-		return redirect(VIEW,"userRole");
+		return redirect(VIEW+"userRole");
 	}
 	
 	/**系统配置角色**/
@@ -484,7 +484,7 @@ public class UserBussiController extends BaseController{
 			model.addAttribute("systemInfo", systemInfo);
 		}
 
-		return redirect(VIEW,"userRoleAdd");
+		return redirect(VIEW+"userRoleAdd");
 	}
 	
 	/**

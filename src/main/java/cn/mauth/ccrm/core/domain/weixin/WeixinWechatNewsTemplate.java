@@ -19,7 +19,7 @@ public class WeixinWechatNewsTemplate implements Serializable{
 	private Integer accountId;
 	@Column(length = 500)
 	private String mediaId;
-	@OneToMany
+	@OneToMany(fetch = FetchType.EAGER)
 	@JoinColumn(name = "template_id")
 	private Set<WeixinWechatNewsItem> wechatNewsitems;
 

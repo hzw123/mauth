@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/department")
 public class DepartmentController extends BaseController{
 
-	private static final String VIEW="/sys/department/";
+	private static final String VIEW="sys/department/";
 	@Autowired
 	private DepartmentServer departmentServer;
 	@Autowired
@@ -46,7 +46,7 @@ public class DepartmentController extends BaseController{
 	 */
 	@RequestMapping("/list")
 	public String list() throws Exception {
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 	
 	/**
@@ -63,7 +63,7 @@ public class DepartmentController extends BaseController{
 			SysEnterprise enterprise = department.getEnterprise();
 			model.addAttribute("enterprise", enterprise);
 		}
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 	/**
@@ -93,7 +93,7 @@ public class DepartmentController extends BaseController{
 				//编辑资料
 				SysDepartment parent=null;
 				SysDepartment entity = departmentServer.get(department.getDbid());
-				if(parentId>0){
+				if(parentId!=null&&parentId>0){
 					 parent = departmentServer.get(parentId);
 					 //如果父节点不为空，并且父节点不为根节点
 					 if(null!=parent&&parent.getDbid()!=(int) SysDepartment.ROOT){
@@ -235,7 +235,7 @@ public class DepartmentController extends BaseController{
 		}
 		model.addAttribute("departments", departments);
 
-		return redirect(VIEW,"orderNum");
+		return redirect(VIEW+"orderNum");
 	}
 
 
@@ -402,7 +402,7 @@ public class DepartmentController extends BaseController{
 		SysDepartment department = departmentServer.get(1);
 		JSONObject userJson = getJsonUser(department);
 		model.addAttribute("userJson", userJson);
-		return redirect(VIEW,"departmentUser");
+		return redirect(VIEW+"departmentUser");
 	}
 
 

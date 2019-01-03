@@ -58,7 +58,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/memberWechat")
 public class MemberWechatController extends BaseController{
 
-	private static final String VIEW="/wachat/meber/";
+	private static final String VIEW="wachat/meber/";
 	@Autowired
 	private MemberServer memberServer;
 	@Autowired
@@ -105,13 +105,13 @@ public class MemberWechatController extends BaseController{
 			Mem member = weixinGzuserinfo2.getMember();
 			if(member==null){
 				model.addAttribute("url", url);
-				return redirect(VIEW,"memAuth");
+				return redirect(VIEW+"memAuth");
 			}else{
 				model.addAttribute("member", member);
-				return redirect(VIEW,"memberCenter");
+				return redirect(VIEW+"memberCenter");
 			}
 		}else{
-			return redirect(VIEW,"weixinNullError");
+			return redirect(VIEW+"weixinNullError");
 		}
 	}
 
@@ -276,7 +276,7 @@ public class MemberWechatController extends BaseController{
 				if(member.getMemAuthStatus()== Mem.MEMAUTHCOMM||member.getMemAuthStatus()==null){
 					model.addAttribute("url", "/memberWechat/memberCenter");
 					model.addAttribute("member", member);
-					return redirect(VIEW,"memAuth");
+					return redirect(VIEW+"memAuth");
 				}else{
 					model.addAttribute("member", member);
 					SysEnterprise enterprise2 = member.getEnterprise();
@@ -285,15 +285,15 @@ public class MemberWechatController extends BaseController{
 					if(!startWritings.isEmpty()){
 						model.addAttribute("startWriting", startWritings.get(0));
 					}
-					return redirect(VIEW,"memberCenter");
+					return redirect(VIEW+"memberCenter");
 				}
 			}else{
-				return redirect(VIEW,"weixinNullError");
+				return redirect(VIEW+"weixinNullError");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return redirect(VIEW,"error");
+		return redirect(VIEW+"error");
 	}
 
 	/**
@@ -313,7 +313,7 @@ public class MemberWechatController extends BaseController{
 			Mem member3 = memberServer.get(member.getDbid());
 			model.addAttribute("member", member3);
 		}
-		return redirect(VIEW,"memberInfo");
+		return redirect(VIEW+"memberInfo");
 	}
 	
 	
@@ -346,7 +346,7 @@ public class MemberWechatController extends BaseController{
 			}
 			model.addAttribute("pointRecords", pointRecords);
 		}
-		return redirect(VIEW,"myPoint");
+		return redirect(VIEW+"myPoint");
 	}
 
 	/**
@@ -364,7 +364,7 @@ public class MemberWechatController extends BaseController{
 			},Sort.by(Sort.Direction.DESC,"createTime"));
 			model.addAttribute("startWritings", startWritings);
 		}
-		return redirect(VIEW,"myOrder");
+		return redirect(VIEW+"myOrder");
 	}
 
 	/**
@@ -382,7 +382,7 @@ public class MemberWechatController extends BaseController{
 		List<MemStartWritingItem> startWritingItems = startWritingitemServer.getRepository().findByStartWritingId(startWritingId);
 		model.addAttribute("startWritingItems", startWritingItems);
 
-		return redirect(VIEW,"orderDetail");
+		return redirect(VIEW+"orderDetail");
 	}
 	
 
@@ -407,7 +407,7 @@ public class MemberWechatController extends BaseController{
 			e.printStackTrace();
 			log.error(e.getMessage());
 		}
-		return redirect(VIEW,"stormMoney");
+		return redirect(VIEW+"stormMoney");
 	}
 
 	/**
@@ -425,7 +425,7 @@ public class MemberWechatController extends BaseController{
 							.findByMemberIdAndState(member.getDbid(),0);
 			model.addAttribute("stormMoneyOnceEntItemCards", stormMoneyOnceEntItemCards);
 		}
-		return redirect(VIEW,"stormOnceItemMoney");
+		return redirect(VIEW+"stormOnceItemMoney");
 	}
 	
 	/**
@@ -457,7 +457,7 @@ public class MemberWechatController extends BaseController{
 		}else{
 			return "weixinNullError";
 		}
-		return redirect(VIEW,"modifyPhone");
+		return redirect(VIEW+"modifyPhone");
 	}
 
 
@@ -515,7 +515,7 @@ public class MemberWechatController extends BaseController{
 			e.printStackTrace();
 			log.error(e.getMessage());
 		}
-		return redirect(VIEW,"myCoupon");
+		return redirect(VIEW+"myCoupon");
 	}
 	
 
@@ -525,7 +525,7 @@ public class MemberWechatController extends BaseController{
 		MemCoupon couponMember = couponMemberServer.get(couponMemberId);
 		model.addAttribute("couponMember", couponMember);
 
-		return redirect(VIEW,"myCouponDetail");
+		return redirect(VIEW+"myCouponDetail");
 	}
 	
 	/**
@@ -555,15 +555,15 @@ public class MemberWechatController extends BaseController{
 						List<SysArtificer> artificers = artificerServer.getRepository().findByEnterpriseId(enterprise.getDbid());
 						model.addAttribute("artificers", artificers);
 					}
-					return redirect(VIEW,"onlineBooking");
+					return redirect(VIEW+"onlineBooking");
 				}
 			}else{
-				return redirect(VIEW,"weixinNullError");
+				return redirect(VIEW+"weixinNullError");
 			}
 		} catch (Exception e) {
 			log.error(e.getMessage());
 		}
-		return redirect(VIEW,"onlineBooking");
+		return redirect(VIEW+"onlineBooking");
 	}
 	
 
@@ -655,7 +655,7 @@ public class MemberWechatController extends BaseController{
 
 		model.addAttribute("onlineBookings", onlineBookings);
 
-		return redirect(VIEW,"myOnlineBooking");
+		return redirect(VIEW+"myOnlineBooking");
 	}
 
 	

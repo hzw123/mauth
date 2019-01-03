@@ -33,10 +33,10 @@ public class MainController extends BaseController{
 
 	@RequestMapping("/")
 	public String start(){
-		return redirect("/index");
+		return redirect("index");
 	}
 
-	@GetMapping("/login")
+	@GetMapping("/toLogin")
 	public String login(Model model){
 		List<SysInfo> systemInfos = systemInfoServer.findAll();
 		if(null!=systemInfos&&systemInfos.size()>0){
@@ -48,6 +48,10 @@ public class MainController extends BaseController{
 
 	@RequestMapping("/index")
 	public String index(Model model) throws Exception {
+		List<SysInfo> systemInfos = systemInfoServer.findAll();
+		if(null!=systemInfos&&systemInfos.size()>0){
+			model.addAttribute("systemInfo", systemInfos.get(0));
+		}
 		try{
 			SysUser user = SecurityUserHolder.getCurrentUser();
 			List<SysResource> resources = resourceServer.queryResourceByUserId(user.getDbid());
@@ -73,12 +77,7 @@ public class MainController extends BaseController{
 				SysResource resource = resourceServer.get(resourceIndexId);
 				model.addAttribute("resource", resource);
 			}
-			
-			List<SysInfo> systemInfos = systemInfoServer.findAll();
-			if(null!=systemInfos&&systemInfos.size()>0){
-				model.addAttribute("systemInfo", systemInfos.get(0));
-			}
-			
+
 			List<SysUser> users = userServer.getRepository()
 					.findByAdminType(SysUser.ADMINTYPEADMIN);
 			model.addAttribute("users", users);
@@ -106,7 +105,6 @@ public class MainController extends BaseController{
 			SysUser user = userServer.get(currentUser.getDbid());
 			model.addAttribute("user", user);
 		}
-		
 		return "adminContent";
 	}
 

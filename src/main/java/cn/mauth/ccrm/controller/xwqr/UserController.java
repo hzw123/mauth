@@ -42,7 +42,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class UserController extends BaseController{
 
-	private static final String VIEW="/sys/user/";
+	private static final String VIEW="sys/user/";
 	@Autowired
 	private UserServer userServer;
 	@Autowired
@@ -66,7 +66,7 @@ public class UserController extends BaseController{
 			u.setPassword(calcMD5);
 			userServer.save(u);
 		}
-		return redirect(VIEW,"add");
+		return redirect(VIEW+"add");
 	}
 
 	/**
@@ -121,8 +121,8 @@ public class UserController extends BaseController{
 			return cb.and(param.toArray(new Predicate[param.size()]));
 		},userServer.getPageRequest(pageable)));
 
-		model.addAttribute("templates", page);
-		return redirect(VIEW,"list");
+		model.addAttribute("page", page);
+		return redirect(VIEW+"list");
 	}
 
 	/**
@@ -245,7 +245,7 @@ public class UserController extends BaseController{
 			model.addAttribute("user", user);
 			model.addAttribute("staff", user.getStaff());
 		}
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 	/**
@@ -283,7 +283,7 @@ public class UserController extends BaseController{
 
 			model.addAttribute("staff", user2.getStaff());
 		}
-		return redirect(VIEW,"editSelf");
+		return redirect(VIEW+"editSelf");
 	}
 
 	/**
@@ -340,7 +340,7 @@ public class UserController extends BaseController{
 			SysUser user2 = userServer.get(user.getDbid());
 			model.addAttribute("user", user2);
 		}
-		return redirect(VIEW,"modifyPassword");
+		return redirect(VIEW+"modifyPassword");
 	}
 
 	/**
@@ -390,7 +390,7 @@ public class UserController extends BaseController{
 			SysUser user2=userServer.get(dbid);
 			model.addAttribute("user2",user2);
 		}
-		return redirect(VIEW,"userRole");
+		return redirect(VIEW+"userRole");
 	}
 
 	/**

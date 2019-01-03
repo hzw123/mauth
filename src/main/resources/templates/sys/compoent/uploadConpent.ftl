@@ -10,7 +10,7 @@ window.onload = function() {
 				// Backend Settings
 				upload_url : "${ctx}/swfUpload/uploadFile",
 				post_params : {
-					"PHPSESSID" : "6a95034fff6ba3a6aa8a990ca3af42ee","userId":"${sessionScope.user.dbid}"
+					"PHPSESSID" : "6a95034fff6ba3a6aa8a990ca3af42ee","userId":"${user.dbid}"
 				},
 				//上传文件的名称
 				file_post_name : "file",

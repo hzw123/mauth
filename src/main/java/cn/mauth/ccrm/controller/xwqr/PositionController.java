@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/position")
 public class PositionController extends BaseController{
 
-	private static final String VIEW="/sys/position/";
+	private static final String VIEW="sys/position/";
 	@Autowired
 	private PositionServer positionServer;
 
@@ -29,7 +29,7 @@ public class PositionController extends BaseController{
 	 */
 	@RequestMapping("/list")
 	public String list() throws Exception {
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 	
 	/**
@@ -41,7 +41,7 @@ public class PositionController extends BaseController{
 			SysPosition position2 = positionServer.get(dbid);
 			model.addAttribute("position", position2);
 		}
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 	/**
@@ -53,7 +53,7 @@ public class PositionController extends BaseController{
 		try {
 			if (null!=position.getDbid()&&position.getDbid()>0) {
 				SysPosition parent=null;
-				if(parentId>0){
+				if(parentId!=null&&parentId>0){
 					 parent = positionServer.get(parentId);
 				}
 				SysPosition position2 = positionServer.get(position.getDbid());
@@ -64,7 +64,7 @@ public class PositionController extends BaseController{
 				positionServer.save(position2);
 			}
 			else{
-				if(parentId>0){
+				if(parentId!=null&&parentId>0){
 					SysPosition parent = positionServer.get(parentId);
 					position.setParent(parent);
 					positionServer.save(position);

@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/weixinTexttemplate")
 public class WeixinTexttemplateController extends BaseController{
 
-	private static final String VIEW="/weixin/texttemplate/";
+	private static final String VIEW="weixin/texttemplate/";
 	@Autowired
 	private WeixinTexttemplateServer weixinTexttemplateServer;
 	@Autowired
@@ -53,10 +53,10 @@ public class WeixinTexttemplateController extends BaseController{
 				return null;
 			},weixinTexttemplateServer.getPageRequest(pageable)));
 
-			model.addAttribute("templates", page);
+			model.addAttribute("page", page);
 		}
 
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 	@RequestMapping("/selectText")
@@ -87,7 +87,7 @@ public class WeixinTexttemplateController extends BaseController{
 			});
 			model.addAttribute("weixinTexttemplates", weixinTexttemplates);
 		}
-		return redirect(VIEW,"selectText");
+		return redirect(VIEW+"selectText");
 	}
 
 	@ResponseBody
@@ -114,7 +114,7 @@ public class WeixinTexttemplateController extends BaseController{
 
 	@RequestMapping("/add")
 	public String add(){
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 
@@ -124,7 +124,7 @@ public class WeixinTexttemplateController extends BaseController{
 			WeixinTexttemplate weixinTexttemplate2 = weixinTexttemplateServer.get(dbid);
 			model.addAttribute("weixinTexttemplate", weixinTexttemplate2);
 		}
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 

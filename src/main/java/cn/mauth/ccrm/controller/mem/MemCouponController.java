@@ -34,7 +34,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/memberCoupon")
 public class MemCouponController extends BaseController{
 
-	private static final String VIEW="/member/memberCoupon/";
+	private static final String VIEW="member/memberCoupon/";
 	@Autowired
 	private CouponMemberServer couponMemberServer;
 	@Autowired
@@ -48,7 +48,7 @@ public class MemCouponController extends BaseController{
 
 	@RequestMapping("/queryList")
 	public String queryList() {
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 	@ResponseBody
@@ -88,7 +88,7 @@ public class MemCouponController extends BaseController{
 			List<MemCoupon> couponMembers = couponMemberServer.findByMemberId(memberId);
 			model.addAttribute("couponMembers", couponMembers);
 		}
-		return redirect(VIEW,"memberCoupon");
+		return redirect(VIEW+"memberCoupon");
 	}
 	
 
@@ -101,7 +101,7 @@ public class MemCouponController extends BaseController{
 
 		model.addAttribute("couponMemberTemplates", couponMemberTemplates);
 
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 	
 
@@ -117,7 +117,7 @@ public class MemCouponController extends BaseController{
 			MemCoupon couponMember2 = couponMemberServer.get(dbid);
 			model.addAttribute("couponMember", couponMember2);
 		}
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 
@@ -190,7 +190,7 @@ public class MemCouponController extends BaseController{
 		} catch (Exception e) {
 			log.error(e.getMessage());
 		}
-		return redirect(VIEW,"sendMore");
+		return redirect(VIEW+"sendMore");
 	}
 
 	@RequestMapping("/saveMore")
@@ -335,7 +335,7 @@ public class MemCouponController extends BaseController{
 
 		model.addAttribute("couponMember", memCoupon);
 
-		return redirect(VIEW,"printCode");
+		return redirect(VIEW+"printCode");
 	}
 
 	/**
@@ -347,7 +347,7 @@ public class MemCouponController extends BaseController{
 		List<SetCouponMemberTemplate> couponMemberTemplates = couponMemberTemplateServer.getRepository().findByState(0);
 		model.addAttribute("couponMemberTemplates", couponMemberTemplates);
 
-		return redirect(VIEW,"export");
+		return redirect(VIEW+"export");
 	}
 
 	/**

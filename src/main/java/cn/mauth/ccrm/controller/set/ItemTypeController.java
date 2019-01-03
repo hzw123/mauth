@@ -30,7 +30,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/itemType")
 public class ItemTypeController extends BaseController{
-	private static final String VIEW="/set/itemType/";
+	private static final String VIEW="set/itemType/";
 	@Autowired
 	private ItemServer itemServer;
 	@Autowired
@@ -38,7 +38,7 @@ public class ItemTypeController extends BaseController{
 
 	@RequestMapping("/queryList")
 	public String queryList() throws Exception {
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 	@ResponseBody
@@ -60,7 +60,7 @@ public class ItemTypeController extends BaseController{
 
 	@RequestMapping("/add")
 	public String add() throws Exception {
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 
@@ -70,7 +70,7 @@ public class ItemTypeController extends BaseController{
 			SetItemType itemType2 = itemTypeServer.get(dbid);
 			model.addAttribute("itemType",itemType2);
 		}
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 

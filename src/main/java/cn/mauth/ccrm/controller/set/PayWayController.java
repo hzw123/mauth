@@ -27,13 +27,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/payWay")
 public class PayWayController extends BaseController{
-	private static final String VIEW="/set/payWay/";
+	private static final String VIEW="set/payWay/";
 	@Autowired
 	private PayWayServer payWayServer;
 	
 	@RequestMapping("/queryList")
 	public String queryList() throws Exception {
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 	@RequestMapping("/queryJson")
@@ -49,7 +49,7 @@ public class PayWayController extends BaseController{
 
 	@RequestMapping("/queryViewList")
 	public String queryViewList() throws Exception {
-		return redirect(VIEW,"viewList");
+		return redirect(VIEW+"viewList");
 	}
 
 	@RequestMapping("/queryViewJson")
@@ -65,7 +65,7 @@ public class PayWayController extends BaseController{
 
 	@RequestMapping("/add")
 	public String add() throws Exception {
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 
@@ -75,7 +75,7 @@ public class PayWayController extends BaseController{
 			SetPayWay payWay2 = payWayServer.get(dbid);
 			model.addAttribute("payWay",payWay2);
 		}
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 

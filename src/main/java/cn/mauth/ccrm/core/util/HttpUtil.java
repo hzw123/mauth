@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.text.MessageFormat;
 
 
+import cn.mauth.ccrm.core.domain.xwqr.SysUser;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;  
 import org.apache.http.client.HttpClient;
@@ -19,7 +20,8 @@ import javax.servlet.http.HttpSession;
 
 
 public class HttpUtil {
-	
+	private static final String USER="sys_user_session";
+
 	private static String AuthMessageTemplate="【金拇指】验证码{0}，90s内有效。如非本人操作，请忽略。";
 	
 	public static boolean SendAuthCode(String randNum,String mobile){
@@ -76,6 +78,13 @@ public class HttpUtil {
 		getSession().setAttribute(key,obj);
 	}
 
+	public static void setSysUser(Object obj){
+		getSession().setAttribute(USER,obj);
+	}
+
+	public static SysUser getSysUser(){
+		return (SysUser) HttpUtil.getSession().getAttribute(USER);
+	}
 
 	public static HttpSession getSession(){
 		return getRequest().getSession();

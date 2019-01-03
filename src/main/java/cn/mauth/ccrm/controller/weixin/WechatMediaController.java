@@ -37,7 +37,7 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping("/wechatMedia")
 public class WechatMediaController extends BaseController{
 
-	private static final String VIEW="/weixin/wechatMedia/";
+	private static final String VIEW="weixin/wechatMedia/";
 	@Autowired
 	private WeixinAccountServer weixinAccountServer;
 	@Autowired
@@ -136,11 +136,11 @@ public class WechatMediaController extends BaseController{
 				);
 			},weixinAccountServer.getPageRequest(pageable)));
 
-			model.addAttribute("templates", page);
+			model.addAttribute("page", page);
 
 		}
 
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 	@RequestMapping("/selectWechatMedia")
@@ -162,7 +162,7 @@ public class WechatMediaController extends BaseController{
 			model.addAttribute("wechatMedias", wechatMedias);
 		}
 
-		return redirect(VIEW,"selectWechatMedia");
+		return redirect(VIEW+"selectWechatMedia");
 	}
 
 	@ResponseBody
@@ -214,7 +214,7 @@ public class WechatMediaController extends BaseController{
 			List<WeixinMedia> wechatMedias = wechatMediaServer.getRepository().findByWeixinAccountId(weixinAccount.getDbid());
 			model.addAttribute("wechatMedias", wechatMedias);
 		}
-		return redirect(VIEW,"uploadConpentWechat");
+		return redirect(VIEW+"uploadConpentWechat");
 	}
 
 	/**
@@ -226,7 +226,7 @@ public class WechatMediaController extends BaseController{
 		List<WeixinMedia> wechatMedias = wechatMediaServer.findAll();
 		model.addAttribute("wechatMedias", wechatMedias);
 
-		return redirect(VIEW,"uploadLocalImage");
+		return redirect(VIEW+"uploadLocalImage");
 	}
 	
 	//删除文件
@@ -298,7 +298,7 @@ public class WechatMediaController extends BaseController{
 
 	@RequestMapping("/save")
 	public String save(){
-		return redirect(VIEW,"selfUpload");
+		return redirect(VIEW+"selfUpload");
 	}
 
 	/**

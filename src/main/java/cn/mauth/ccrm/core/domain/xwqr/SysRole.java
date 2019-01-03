@@ -20,16 +20,12 @@ public class SysRole implements Serializable {
 	private String note;
 	
 	private Integer userType;
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "sys_resource_role",
 	joinColumns = {@JoinColumn(name = "role_id")},
 	inverseJoinColumns = {@JoinColumn(name = "resource_id")})
 	private Set<SysResource> resources;
-	@ManyToMany
-	@JoinTable(name = "sys_user_role",
-			joinColumns = {@JoinColumn(name = "role_id")},
-			inverseJoinColumns = {@JoinColumn(name = "user_id")})
-	private Set<SysUser> users;
+
 	public SysRole() {
 	}
 
@@ -77,14 +73,6 @@ public class SysRole implements Serializable {
 
 	public void setResources(Set<SysResource> resources) {
 		this.resources = resources;
-	}
-
-	public Set<SysUser> getUsers() {
-		return users;
-	}
-
-	public void setUsers(Set<SysUser> users) {
-		this.users = users;
 	}
 
 	public Integer getUserType() {

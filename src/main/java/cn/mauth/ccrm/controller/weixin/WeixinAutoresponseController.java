@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/weixinAutoresponse")
 public class WeixinAutoresponseController extends BaseController{
 
-	private static final String VIEW="/weixin/weixinAutoresponse/";
+	private static final String VIEW="weixin/weixinAutoresponse/";
 	@Autowired
 	private WeixinAutoresponseServer weixinAutoresponseServer;
 	@Autowired
@@ -50,9 +50,9 @@ public class WeixinAutoresponseController extends BaseController{
 
 		},weixinAutoresponseServer.getPageRequest(pageable)));
 
-		model.addAttribute("templates", page);
+		model.addAttribute("page", page);
 
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 
@@ -64,7 +64,7 @@ public class WeixinAutoresponseController extends BaseController{
 
 		model.addAttribute("weixinTexttemplates", weixinTexttemplates);
 
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 
@@ -83,7 +83,7 @@ public class WeixinAutoresponseController extends BaseController{
 				model.addAttribute("weixinTexttemplates", weixinTexttemplates);
 			}
 		}
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 

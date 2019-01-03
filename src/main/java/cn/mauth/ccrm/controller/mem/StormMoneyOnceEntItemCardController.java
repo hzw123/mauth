@@ -44,7 +44,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/stormMoneyOnceEntItemCard")
 public class StormMoneyOnceEntItemCardController extends BaseController{
-	private static final String VIEW="/member/stormMoneyOnceEntItemCard/";
+	private static final String VIEW="member/stormMoneyOnceEntItemCard/";
 	@Autowired
 	private StormMoneyOnceEntItemCardServer stormMoneyOnceEntItemCardServer;
 	@Autowired
@@ -64,7 +64,7 @@ public class StormMoneyOnceEntItemCardController extends BaseController{
 
  	@RequestMapping("/queryList")
 	public String queryList() {
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 	@ResponseBody
@@ -97,7 +97,7 @@ public class StormMoneyOnceEntItemCardController extends BaseController{
 		} catch (Exception e) {
 			log.error(e.getMessage());
 		}
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 	@RequestMapping("/view")
@@ -129,7 +129,7 @@ public class StormMoneyOnceEntItemCardController extends BaseController{
 		} catch (Exception e) {
 			log.error(e.getMessage());
 		}
-		return redirect(VIEW,"view");
+		return redirect(VIEW+"view");
 	}
 
 	@PostMapping("/save")

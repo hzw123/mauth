@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class KfAccountController extends BaseController{
 
-	private static final String VIEW="/weixin/kfAccount/";
+	private static final String VIEW="weixin/kfAccount/";
 	@Autowired
 	private KfAccountServer kfAccountServer;
 	@Autowired
@@ -44,9 +44,9 @@ public class KfAccountController extends BaseController{
 		Object page= Utils.pageResult(kfAccountServer.findAll(
 				kfAccountServer.getPageRequest(pageable)));
 
-		model.addAttribute("templates", page);
+		model.addAttribute("page", page);
 
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 
@@ -63,7 +63,7 @@ public class KfAccountController extends BaseController{
 
 		model.addAttribute("weixinAccount", weixinAccount);
 
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 
@@ -84,7 +84,7 @@ public class KfAccountController extends BaseController{
 			model.addAttribute("weixinAccount", weixinAccount);
 		}
 
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 

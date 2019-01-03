@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class DiscountTypeController extends BaseController{
 
-	private static final String VIEW="/set/discountType/";
+	private static final String VIEW="set/discountType/";
 	@Autowired
 	private DiscountTypeServer discountTypeServer;
 	@Autowired
@@ -41,7 +41,7 @@ public class DiscountTypeController extends BaseController{
 		List<SetDiscountType> discountTypes = discountTypeServer.GetByEntId(ent.getDbid());
 		model.addAttribute("discountTypes", discountTypes);
 
-		return redirect(VIEW,"index");
+		return redirect(VIEW+"index");
 	}
 	
 	//编辑page
@@ -51,13 +51,13 @@ public class DiscountTypeController extends BaseController{
 		model.addAttribute("payways", payways);
 
 		if(typeId==0){
-			return redirect(VIEW,"edit");
+			return redirect(VIEW+"edit");
 		}
 
 		SetDiscountType discountType=discountTypeServer.get(typeId);
 		model.addAttribute("discountType", discountType);
 
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 	
 	//删除折扣方案
@@ -103,7 +103,7 @@ public class DiscountTypeController extends BaseController{
 	@RequestMapping("/addItem")
 	public String addItem(Model model,int typeId) throws Exception {
 		model.addAttribute("typeId", typeId);
-		return redirect(VIEW,"addItem");
+		return redirect(VIEW+"addItem");
 	}
 
 	@RequestMapping("/editItem")
@@ -112,7 +112,7 @@ public class DiscountTypeController extends BaseController{
 		SetDiscountTypeItem discountTypeItem=discountTypeitemServer.get(dbid);
 		model.addAttribute("discountTypeItem", discountTypeItem);
 
-		return redirect(VIEW,"editItem");
+		return redirect(VIEW+"editItem");
 	}
 	
 	//保存方案

@@ -10,19 +10,16 @@ import cn.mauth.ccrm.core.domain.xwqr.SysUser;
 
 public class SecurityUserHolder {
 
+	public static void setAuthentication(Authentication authentication){
+		SecurityContextHolder.getContext().setAuthentication(authentication);
+	}
+
 	public static SysUser getCurrentUser(){
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		if(null==authentication){
-			return null;
-		}
-		if(authentication.getPrincipal() instanceof SysUser){
-			return (SysUser) authentication.getPrincipal();
-		}
-		return null;
+		return HttpUtil.getSysUser();
 	}
 
 	public static SysEnterprise getEnterprise(){
-		SysUser currentUser = SecurityUserHolder.getCurrentUser();
+		SysUser currentUser = HttpUtil.getSysUser();
 		if(null==currentUser){
 			return null;
 		}

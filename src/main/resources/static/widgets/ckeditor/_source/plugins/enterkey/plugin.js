@@ -344,7 +344,7 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 
 					range.setStartAt( lineBreak.getNext(), CKEDITOR.POSITION_AFTER_START );
 
-					// Scroll into view, for non IE.
+					// Scroll into VIEW+ for non IE.
 					var dummy = null;
 
 					// BR is not positioned in Opera and Webkit.

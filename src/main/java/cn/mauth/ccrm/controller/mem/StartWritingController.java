@@ -36,7 +36,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/startWriting")
 public class StartWritingController extends BaseController {
-	private static final String VIEW="/member/startWriting/";
+	private static final String VIEW="member/startWriting/";
 
 	@Autowired
 	private StartWritingItemServer startWritingItemServer;
@@ -80,7 +80,7 @@ public class StartWritingController extends BaseController {
 
 	@RequestMapping("/queryList")
 	public String queryList() {
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 	@ResponseBody
@@ -117,7 +117,7 @@ public class StartWritingController extends BaseController {
 
 	@RequestMapping("/queryCousumptionList")
 	public String queryCousumptionList() {
-		return redirect(VIEW,"cousumptionList");
+		return redirect(VIEW+"cousumptionList");
 	}
 
 	/**
@@ -134,7 +134,7 @@ public class StartWritingController extends BaseController {
 
 		model.addAttribute("rooms", rooms);
 
-		return redirect(VIEW,"startWriting");
+		return redirect(VIEW+"startWriting");
 	}
 
 	/**
@@ -145,7 +145,7 @@ public class StartWritingController extends BaseController {
 		SysEnterprise enterprise = SecurityUserHolder.getEnterprise();
 		List<SysRoom> rooms = roomServer.getRepository().findByEnterpriseId(enterprise.getDbid());
 		model.addAttribute("rooms", rooms);
-		return redirect(VIEW,"makeupRoom");
+		return redirect(VIEW+"makeupRoom");
 	}
 
 	/**
@@ -178,7 +178,7 @@ public class StartWritingController extends BaseController {
 		model.addAttribute("member", member);
 		model.addAttribute("date", DateUtil.format(new Date()));
 
-		return redirect(VIEW,"startWritingRoom");
+		return redirect(VIEW+"startWritingRoom");
 	}
 
 	/**
@@ -367,7 +367,7 @@ public class StartWritingController extends BaseController {
 		List<MemLog> logs = this.memLogServer.GetOrderLog(dbid);
 		model.addAttribute("logs", logs);
 
-		return redirect(VIEW,"view");
+		return redirect(VIEW+"view");
 	}
 
 	@RequestMapping("/changeRoom")
@@ -381,7 +381,7 @@ public class StartWritingController extends BaseController {
 		});
 		model.addAttribute("rooms", rooms);
 
-		return redirect(VIEW,"changeRoom");
+		return redirect(VIEW+"changeRoom");
 	}
 
 	/**
@@ -441,7 +441,7 @@ public class StartWritingController extends BaseController {
 
 		model.addAttribute("startWriting", memStartWriting);
 
-		return redirect(VIEW,"addItemProduct");
+		return redirect(VIEW+"addItemProduct");
 	}
 
 	/**
@@ -676,7 +676,7 @@ public class StartWritingController extends BaseController {
 			log.error(e.getMessage());
 			e.printStackTrace();
 		}
-		return redirect(VIEW,"cash");
+		return redirect(VIEW+"cash");
 	}
 
 	@RequestMapping("/saveCash")

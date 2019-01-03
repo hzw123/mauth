@@ -30,7 +30,7 @@
 			<tr height="42">
 				<td class="formTableTdLeft" style="color: red;">名称:&nbsp;</td>
 				<td ><input type="text" name="department.name" id="name" value="${department.name }" class="layui-input" title="部门名称"	lay-verify='required'></td>
-				<c:if test="${fn:contains(sessionScope.user.userId,'super')}" var="status">
+				<c:if test="${fn:contains(user.userId,'super')}" var="status">
 						<td class="formTableTdLeft" style="color: red;">类型:&nbsp;</td>
 						<td >
 							<select id="type" name="department.type"  class="layui-input" lay-verify='required'>

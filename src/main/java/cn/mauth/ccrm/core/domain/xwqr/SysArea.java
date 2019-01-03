@@ -27,8 +27,7 @@ public class SysArea implements Serializable {
 	private String name;
 	@Column(nullable = false)
 	private String treePath;
-
-	@OneToMany(fetch = FetchType.LAZY)
+	@OneToMany(fetch = FetchType.EAGER)
 	@JoinColumn(name = "parent")
 	private Set<SysArea> areas;
 

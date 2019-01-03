@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/messageTemplate")
 public class MessageTemplateController extends BaseController{
-	private static final String VIEW="/set/messageTemplate/";
+	private static final String VIEW="set/messageTemplate/";
 	@Autowired
 	private MessageTemplateServer messageTemplateServer;
 	@Autowired
@@ -31,12 +31,12 @@ public class MessageTemplateController extends BaseController{
 
 	@GetMapping("/edit")
 	public String edit() {
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 	@GetMapping("/index")
 	public String index() {
-		return redirect(VIEW,"index");
+		return redirect(VIEW+"index");
 	}
 
 	@PostMapping("/save")
@@ -83,7 +83,7 @@ public class MessageTemplateController extends BaseController{
 		if(dbid>0){
 			this.messageTemplateServer.delete(dbid);
 		}
-		return redirect(VIEW,"index");
+		return redirect(VIEW+"index");
 	}
 	
 }

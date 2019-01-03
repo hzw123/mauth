@@ -27,20 +27,20 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/resource")
 public class ResourceController extends BaseController {
 
-	private static final String VIEW="/sys/resource/";
+	private static final String VIEW="sys/resource/";
 	@Autowired
 	private ResourceServer resourceServer;
 
 	@RequestMapping("/queryList")
 	public String queryList() throws Exception {
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 	@RequestMapping("/save")
 	public void save(SysResource resource,HttpServletRequest request) throws Exception {
 		Integer parentId = ParamUtil.getIntParam(request, "parentId", -1);
 		SysResource parent=null;
-		if(parentId>0){
+		if(parentId!=null&&parentId>0){
 			parent= resourceServer.get(parentId);
 		}
 		if(null!=resource.getDbid()&&resource.getDbid()>0){
@@ -66,7 +66,7 @@ public class ResourceController extends BaseController {
 			SysResource resource = resourceServer.get(dbid);
 			model.addAttribute("resource", resource);
 		}
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 
@@ -77,7 +77,7 @@ public class ResourceController extends BaseController {
 
 		model.addAttribute("resources", resources);
 
-		return redirect(VIEW,"orderNum");
+		return redirect(VIEW+"orderNum");
 	}
 
 
@@ -278,9 +278,9 @@ public class ResourceController extends BaseController {
 			return cb.equal(root.get("indexStatus"),2);
 		},resourceServer.getPageRequest(pageable)));
 
-		model.addAttribute("templates", page);
+		model.addAttribute("page", page);
 
-		return redirect(VIEW,"indexList");
+		return redirect(VIEW+"indexList");
 	}
 
 	@RequestMapping("/saveIndex")
@@ -288,7 +288,7 @@ public class ResourceController extends BaseController {
 		Integer parentId = ParamUtil.getIntParam(request, "parentId", -1);
 		SysResource parent=null;
 		try {
-			if(parentId>0){
+			if(parentId!=null&&parentId>0){
 				parent= resourceServer.get(parentId);
 			}
 			if(null!=resource.getDbid()&&resource.getDbid()>0){
@@ -318,6 +318,6 @@ public class ResourceController extends BaseController {
 			SysResource resource = resourceServer.get(dbid);
 			model.addAttribute("resource", resource);
 		}
-		return redirect(VIEW,"editindex");
+		return redirect(VIEW+"editindex");
 	}
 }

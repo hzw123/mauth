@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/wechatNewsItem")
 public class WechatNewsItemController extends BaseController{
 
-	private static final String VIEW="/weixin/wechatNewsItem/";
+	private static final String VIEW="weixin/wechatNewsItem/";
 	@Autowired
 	private WechatNewsItemServer wechatNewsitemServer;
 	@Autowired
@@ -50,19 +50,19 @@ public class WechatNewsItemController extends BaseController{
 
 			model.addAttribute("wechatNewsTemplates", wechatNewsTemplates);
 		}
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 
 	@RequestMapping("/add")
 	public String add() throws Exception {
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 
 	@RequestMapping("/addMore")
 	public String addMore() throws Exception {
-		return redirect(VIEW,"addMore");
+		return redirect(VIEW+"addMore");
 	}
 
 
@@ -81,7 +81,7 @@ public class WechatNewsItemController extends BaseController{
 				}
 			}
 		}
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 	@RequestMapping("/editMore")
@@ -90,7 +90,7 @@ public class WechatNewsItemController extends BaseController{
 			WeixinWechatNewsTemplate template = wechatNewsTemplateServer.get(dbid);
 			model.addAttribute("WeixinNewsTemplate", template);
 		}
-		return redirect(VIEW,"editMore");
+		return redirect(VIEW+"editMore");
 	}
 
 

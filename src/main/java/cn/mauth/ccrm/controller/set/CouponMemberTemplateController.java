@@ -43,7 +43,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/couponMemberTemplate")
 public class CouponMemberTemplateController extends BaseController{
 
-	private static final String VIEW="/set/couponMemberTemplate/";
+	private static final String VIEW="set/couponMemberTemplate/";
 	@Autowired
 	private CouponMemberTemplateServer couponMemberTemplateServer;
 	@Autowired
@@ -57,7 +57,7 @@ public class CouponMemberTemplateController extends BaseController{
 
 	@RequestMapping("/queryList")
 	public String queryList(){
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 	@ResponseBody
@@ -71,7 +71,7 @@ public class CouponMemberTemplateController extends BaseController{
 
 	@RequestMapping("/queryViewList")
 	public String queryViewList() throws Exception {
-		return redirect(VIEW,"viewlist");
+		return redirect(VIEW+"viewlist");
 	}
 
 	@RequestMapping("/queryViewJson")
@@ -101,7 +101,7 @@ public class CouponMemberTemplateController extends BaseController{
 
 	@RequestMapping("/add")
 	public String add() throws Exception {
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 	
 
@@ -111,7 +111,7 @@ public class CouponMemberTemplateController extends BaseController{
 		SetCouponMemberTemplate entity = couponMemberTemplateServer.get(dbid);
 		model.addAttribute("couponMemberTemplate", entity);
 
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 	@RequestMapping("/view")
@@ -120,7 +120,7 @@ public class CouponMemberTemplateController extends BaseController{
 		SetCouponMemberTemplate template = couponMemberTemplateServer.get(dbid);
 		model.addAttribute("couponMemberTemplate", template);
 
-		return redirect(VIEW,"view");
+		return redirect(VIEW+"view");
 	}
 
 
@@ -235,7 +235,7 @@ public class CouponMemberTemplateController extends BaseController{
 	public String selectItem(Integer couponMemberTemplateId,Model model) {
 
 		setItemModel(couponMemberTemplateId,model);
-		return redirect(VIEW,"selectItem");
+		return redirect(VIEW+"selectItem");
 	}
 
 	private  void setItemModel(int couponMemberTemplateId,Model model){
@@ -337,6 +337,6 @@ public class CouponMemberTemplateController extends BaseController{
 	@RequestMapping("/viewItem")
 	public String viewItem(Model model,Integer couponMemberTemplateId ) {
 		setItemModel(couponMemberTemplateId,model);
-		return redirect(VIEW,"viewProduct");
+		return redirect(VIEW+"viewProduct");
 	}
 }

@@ -32,22 +32,22 @@ public interface SysResourceRepository extends BaseRepository<SysResource,Intege
     @Query(value = "SELECT *,count(re.dbid) FROM " +
             "sys_resource re," +
             "(SELECT resource_id from " +
-                "sys_roleresource ros," +
-                "(SELECT roleId FROM " +
-                    "sys_userroles " +
+                "sys_resource_role ros," +
+                "(SELECT role_id FROM " +
+                    "sys_user_role " +
                     "where sys_user_role.user_id=:userId" +
                 ")B " +
                 "where " +
-                "ros.roleId=B.roleId" +
+                "ros.role_id=B.role_id" +
             ")C " +
             "where " +
             "re.dbid=C.resource_id " +
-            "AND re.parent_id=:parentId " +
+            "AND parent_id=:parentId " +
             "AND index_status=1 " +
-            "and re.menu=:menu " +
+            "and menu=:menu " +
             "group by re.dbid " +
             "ORDER BY order_no",nativeQuery = true)
-    List<SysResource> queryResourceByUserId(Integer userId,Integer parentId, Integer menu);
+    List<SysResource> queryResourceByUserId(@Param("userId") Integer userId,@Param("parentId")Integer parentId,@Param("menu") Integer menu);
 
     List<SysResource> findByIndexStatus(int indexStatus);
 }

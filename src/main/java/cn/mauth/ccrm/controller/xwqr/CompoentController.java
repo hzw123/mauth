@@ -32,7 +32,7 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping("/compoent")
 public class CompoentController extends BaseController{
 
-	private static final String VIEW="/sys/compoent/";
+	private static final String VIEW="sys/compoent/";
 	@Autowired
 	private UserServer userServer;
 	@Autowired
@@ -40,12 +40,12 @@ public class CompoentController extends BaseController{
 
 	@RequestMapping("/fileSave")
 	public String fileSave() throws Exception {
-		return redirect(VIEW,"fileSave");
+		return redirect(VIEW+"fileSave");
 	}
 
 	@RequestMapping("/upload")
 	public String upload() throws Exception {
-		return redirect(VIEW,"upload");
+		return redirect(VIEW+"upload");
 	}
 
 	@RequestMapping("/saveFile")
@@ -156,19 +156,19 @@ public class CompoentController extends BaseController{
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
-		return redirect(VIEW,"uploadConpent");
+		return redirect(VIEW+"uploadConpent");
 	}
 
 	@RequestMapping("/departmentSelect")
 	public String departmentSelect() throws Exception {
 
-		return redirect(VIEW,"departmentSelect");
+		return redirect(VIEW+"departmentSelect");
 	}
 
 	@RequestMapping("/positionSelect")
 	public String positionSelect() throws Exception {
 		
-		return redirect(VIEW,"positionSelect");
+		return redirect(VIEW+"positionSelect");
 	}
 
 	/**
@@ -178,7 +178,7 @@ public class CompoentController extends BaseController{
 	 */
 	@RequestMapping("/userSelect")
 	public String userSelect() throws Exception {
-		return redirect(VIEW,"userSelect");
+		return redirect(VIEW+"userSelect");
 	}
 
 	//所有人员信息<select>

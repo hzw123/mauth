@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/operateLog")
 public class OperateLogController extends BaseController{
 
-	private static final String VIEW="/sys/operateLog/";
+	private static final String VIEW="sys/operateLog/";
 	@Autowired
 	private OperateLogServer operateLogServer;
 
@@ -32,9 +32,9 @@ public class OperateLogController extends BaseController{
 		},operateLogServer.getPageRequest(pageable, Sort.by(Sort.Direction.DESC,"operatedate"))));
 
 		model.addAttribute("operator", operator);
-		model.addAttribute("templates", page);
+		model.addAttribute("page", page);
 
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 

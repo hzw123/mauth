@@ -31,7 +31,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/weixinAccount")
 public class WeixinAccountController extends BaseController{
 
-	private static final String VIEW="/weixin/weixinAccount/";
+	private static final String VIEW="weixin/weixinAccount/";
 	@Autowired
 	private WeixinAccountServer weixinAccountServer;
 	@Autowired
@@ -47,9 +47,9 @@ public class WeixinAccountController extends BaseController{
 	public String queryList(Pageable pageable, Model model)  {
 
 		Object page= Utils.pageResult(weixinAccountServer.findAll(weixinAccountServer.getPageRequest(pageable)));
-		model.addAttribute("templates", page);
+		model.addAttribute("page", page);
 
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 	@RequestMapping("/editSelf")
@@ -77,7 +77,7 @@ public class WeixinAccountController extends BaseController{
 			String calcMD5 = Md5.calcMD5(formatFile);
 			model.addAttribute("code", calcMD5);
 		}
-		return redirect(VIEW,"editSelf");
+		return redirect(VIEW+"editSelf");
 	}
 
 	@RequestMapping("/add")
@@ -89,7 +89,7 @@ public class WeixinAccountController extends BaseController{
 		if(null!=weixinAccount){
 			model.addAttribute("message", "您已经添加公众账号，请勿重复添加！");
 		}
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 
@@ -100,7 +100,7 @@ public class WeixinAccountController extends BaseController{
 			WeixinAccount weixinAccount2 = weixinAccountServer.get(dbid);
 			model.addAttribute("weixinAccount", weixinAccount2);
 		}
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 

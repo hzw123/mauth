@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/room")
 public class RoomController extends BaseController {
 
-	private static final String VIEW="/sys/room/";
+	private static final String VIEW="sys/room/";
 	@Autowired
 	private RoomServer roomServer;
 
@@ -42,14 +42,14 @@ public class RoomController extends BaseController {
 
 			},roomServer.getPageRequest(pageable)));
 
-		model.addAttribute("templates", page);
-		return redirect(VIEW,"list");
+		model.addAttribute("page", page);
+		return redirect(VIEW+"list");
 	}
 
 
 	@RequestMapping("/add")
 	public String add() throws Exception {
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 
@@ -59,7 +59,7 @@ public class RoomController extends BaseController {
 			SysRoom room = roomServer.get(dbid);
 			model.addAttribute("room", room);
 		}
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 

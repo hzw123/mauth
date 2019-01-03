@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/weixinSubscribe")
 public class WeixinSubscribeController extends BaseController {
 
-	private static final String VIEW="/weixin/subscribe/";
+	private static final String VIEW="weixin/subscribe/";
 	@Autowired
 	private WeixinSubscribeServer weixinSubscribeServer;
 	@Autowired
@@ -39,9 +39,9 @@ public class WeixinSubscribeController extends BaseController {
 
 		Object page= Utils.pageResult(weixinSubscribeServer.findAll(
 				weixinSubscribeServer.getPageRequest(pageable)));
-		model.addAttribute("templates", page);
+		model.addAttribute("page", page);
 
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 	@RequestMapping("/add")
@@ -54,7 +54,7 @@ public class WeixinSubscribeController extends BaseController {
 			List<WeixinTexttemplate> weixinTexttemplates = weixinTexttemplateServer.findAll();
 			model.addAttribute("weixinTexttemplates", weixinTexttemplates);
 		}
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 
@@ -74,7 +74,7 @@ public class WeixinSubscribeController extends BaseController {
 			}
 		}
 		
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 

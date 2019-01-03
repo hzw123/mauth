@@ -28,7 +28,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/productCategory")
 @Controller
 public class ProductCategoryController extends BaseController{
-	private static final String VIEW="/set/productCategory/";
+	private static final String VIEW="set/productCategory/";
 	@Autowired
 	private ProductServer productServer;
 
@@ -37,7 +37,7 @@ public class ProductCategoryController extends BaseController{
 
 	@RequestMapping("/queryList")
 	public String queryList() throws Exception {
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 	@ResponseBody
@@ -62,7 +62,7 @@ public class ProductCategoryController extends BaseController{
 
 	@RequestMapping("/add")
 	public String add() throws Exception {
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 	@RequestMapping("/edit")
@@ -70,7 +70,7 @@ public class ProductCategoryController extends BaseController{
 		SetProductCategory entity = productCategoryServer.get(dbid);
 
 		model.addAttribute("productCategory", entity);
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 	@PostMapping("/save")

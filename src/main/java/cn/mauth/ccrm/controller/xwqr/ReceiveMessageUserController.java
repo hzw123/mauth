@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/receiveMessageUser")
 public class ReceiveMessageUserController extends BaseController{
 
-	private static final String VIEW="/sys/receiveMessageUser/";
+	private static final String VIEW="sys/receiveMessageUser/";
 	@Autowired
 	private UserServer userServer;
 	@Autowired
@@ -30,15 +30,15 @@ public class ReceiveMessageUserController extends BaseController{
 		Object page=receiveMessageuserServer.findAll(
 				receiveMessageuserServer.getPageRequest(pageable));
 
-		model.addAttribute("templates", page);
+		model.addAttribute("page", page);
 
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 
 	@RequestMapping("/add")
 	public String add() throws Exception {
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 
@@ -48,7 +48,7 @@ public class ReceiveMessageUserController extends BaseController{
 			SysReceiveMessageUser receiveMessageUser = receiveMessageuserServer.get(dbid);
 			model.addAttribute("receiveMessageUser", receiveMessageUser);
 		}
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 

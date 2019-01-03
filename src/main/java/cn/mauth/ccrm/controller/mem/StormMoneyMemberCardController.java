@@ -42,7 +42,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/stormMoneyMember")
 public class StormMoneyMemberCardController extends BaseController{
-	private static final String VIEW="/member/stormMoneyMember/";
+	private static final String VIEW="member/stormMoneyMember/";
 	@Autowired
 	private StormMoneyMemberCardServer stormMoneymemberCardServer;
 	@Autowired
@@ -58,7 +58,7 @@ public class StormMoneyMemberCardController extends BaseController{
 
  	@RequestMapping("/queryList")
 	public String queryList() {
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 	@ResponseBody
@@ -71,7 +71,7 @@ public class StormMoneyMemberCardController extends BaseController{
 	@RequestMapping("/edit")
 	public String edit(Integer memberId,Model model) {
 		setView(memberId,model);
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 	private void setView(int memberId,Model model){
@@ -93,7 +93,7 @@ public class StormMoneyMemberCardController extends BaseController{
 	@RequestMapping("/startMemberCard")
 	public String startMemberCard(Integer memberId,Model model) {
 		setView(memberId,model);
-		return redirect(VIEW,"startMemberCard");
+		return redirect(VIEW+"startMemberCard");
 	}
 
 	@RequestMapping("/view")
@@ -110,7 +110,7 @@ public class StormMoneyMemberCardController extends BaseController{
 
 		model.addAttribute("payways", payways);
 
-		return redirect(VIEW,"view");
+		return redirect(VIEW+"view");
 	}
 
 	/**

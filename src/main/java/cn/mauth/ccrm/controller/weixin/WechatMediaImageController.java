@@ -29,7 +29,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Controller
 public class WechatMediaImageController extends BaseController{
 
-	private static final String VIEW="/weixin/wechatMediaImage/";
+	private static final String VIEW="weixin/wechatMediaImage/";
 	@Autowired
 	private WeixinAccountServer weixinAccountServer;
 	@Autowired
@@ -130,11 +130,11 @@ public class WechatMediaImageController extends BaseController{
 
 	@RequestMapping("/departmentSelect")
 	public String departmentSelect(){
-		return redirect(VIEW,"departmentSelect");
+		return redirect(VIEW+"departmentSelect");
 	}
 
 	@RequestMapping("/save")
 	public String save() throws Exception {
-		return redirect(VIEW,"selfUpload");
+		return redirect(VIEW+"selfUpload");
 	}
 }

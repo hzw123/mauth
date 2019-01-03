@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/weixinGroup")
 public class WeixinGroupController extends BaseController{
 
-	private static final String VIEW="/weixin/weixinGroup/";
+	private static final String VIEW="weixin/weixinGroup/";
 	@Autowired
 	private WeixinGroupServer weixinGroupServer;
 	@Autowired
@@ -51,16 +51,16 @@ public class WeixinGroupController extends BaseController{
 				return cb.equal(root.get("accountId"),String.valueOf(weixinAccount.getDbid()));
 			},weixinGroupServer.getPageRequest(pageable)));
 
-			model.addAttribute("templates", page);
+			model.addAttribute("page", page);
 		}
 		
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 
 	@RequestMapping("/add")
 	public String add(){
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 
@@ -70,7 +70,7 @@ public class WeixinGroupController extends BaseController{
 			WeixinGroup weixinGroup2 = weixinGroupServer.get(dbid);
 			model.addAttribute("weixinGroup", weixinGroup2);
 		}
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 

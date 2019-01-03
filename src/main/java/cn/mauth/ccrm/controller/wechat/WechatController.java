@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/wechat")
 public class WechatController extends BaseController{
 
-	private static final String VIEW="/wechat/";
+	private static final String VIEW="wechat/";
 	@RequestMapping("/index")
 	public String index() throws Exception {
-		return redirect(VIEW,"index");
+		return redirect(VIEW+"index");
 	}
 
 }

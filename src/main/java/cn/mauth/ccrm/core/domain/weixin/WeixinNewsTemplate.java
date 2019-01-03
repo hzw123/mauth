@@ -18,7 +18,7 @@ public class WeixinNewsTemplate implements Serializable {
 	private String type;
 	private String accountid;
 	private String mediaId;
-	@OneToMany
+	@OneToMany(fetch = FetchType.EAGER)
 	@JoinColumn(name = "template_id")
 	private Set<WeixinNewsItem> wechatNewsitems;
 

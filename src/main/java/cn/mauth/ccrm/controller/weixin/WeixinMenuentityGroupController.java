@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/weixinMenuentityGroup")
 public class WeixinMenuentityGroupController extends BaseController{
 
-	private static final String VIEW="/weixin/menuentityGroup/";
+	private static final String VIEW="weixin/menuentityGroup/";
 	@Autowired
 	private WeixinMenuentityGroupServer weixinMenuentityGroupServer;
 	@Autowired
@@ -37,14 +37,14 @@ public class WeixinMenuentityGroupController extends BaseController{
 			return cb.equal(root.get("enterpriseId"),en.getDbid());
 		},weixinMenuentityGroupServer.getPageRequest(pageable)));
 
-		model.addAttribute("templates", page);
+		model.addAttribute("page", page);
 
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 	@RequestMapping("/add")
 	public String add(){
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 
@@ -57,7 +57,7 @@ public class WeixinMenuentityGroupController extends BaseController{
 			WeixinMenuentityGroupMatchRule weixinMenuentityGroupMatchRule = weixinMenuentityGroup.getWeixinMenuentityGroupMatchRule();
 			model.addAttribute("weixinMenuentityGroupMatchRule", weixinMenuentityGroupMatchRule);
 		}
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 

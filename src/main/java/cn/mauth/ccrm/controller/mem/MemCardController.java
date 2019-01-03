@@ -39,7 +39,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/memCard")
 public class MemCardController extends BaseController {
 
-	private static final String VIEW="/member/memberCard/";
+	private static final String VIEW="member/memberCard/";
 	@Autowired
 	private MemberCardServer memberCardServer;
 	@Autowired
@@ -54,7 +54,7 @@ public class MemCardController extends BaseController {
 
 	@RequestMapping("/queryList")
 	public String queryList() throws Exception {
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 
@@ -71,7 +71,7 @@ public class MemCardController extends BaseController {
 
 	@RequestMapping("/queryViewList")
 	public String queryViewList() throws Exception {
-		return redirect(VIEW,"viewList");
+		return redirect(VIEW+"viewList");
 	}
 
 	@ResponseBody
@@ -83,14 +83,14 @@ public class MemCardController extends BaseController {
 
 	@RequestMapping("/add")
 	public String add() throws Exception {
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 
 	@RequestMapping("/edit")
 	public String edit(@RequestParam(value = "dbid",defaultValue = "-1") Integer dbid, Model model) throws Exception {
 		model.addAttribute("memberCard", memberCardServer.get(dbid));
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 
@@ -161,7 +161,7 @@ public class MemCardController extends BaseController {
 	@RequestMapping("/view")
 	public String view(@RequestParam(value = "dbid",defaultValue = "-1") Integer dbid,Model model) {
 		model.addAttribute("memberCard",memberCardServer.get(dbid));
-		return redirect(VIEW,"view");
+		return redirect(VIEW+"view");
 	}
 
 
@@ -230,7 +230,7 @@ public class MemCardController extends BaseController {
 		} catch (Exception e) {
 			log.error(e.getMessage());
 		}
-		return redirect(VIEW,"selectItem");
+		return redirect(VIEW+"selectItem");
 	}
 
 	/**
@@ -337,7 +337,7 @@ public class MemCardController extends BaseController {
 		} catch (Exception e) {
 			log.error(e.getMessage());
 		}
-		return redirect(VIEW,"viewItem");
+		return redirect(VIEW+"viewItem");
 	}
 
 	private List<SetItem> findSetItemTypeByItemTypeId(int dbid){

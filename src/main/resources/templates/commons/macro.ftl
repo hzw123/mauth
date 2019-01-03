@@ -46,4 +46,5 @@
 
     <script type="text/javascript" src="${ctx}/layui/layui.js"></script>
     <script type="text/javascript" src="${ctx}/widgets/jquery.min.js"></script>
+
 </#macro>

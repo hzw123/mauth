@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/weixin")
 public class WeixinController extends BaseController{
 
-	private static final String VIEW="/weixin/";
+	private static final String VIEW="weixin/";
 	@Autowired
 	private WeixinGzuserinfoServer weixinGzuserinfoServer;
 	@Autowired
@@ -109,7 +109,7 @@ public class WeixinController extends BaseController{
 		String exchange = exchange();
 		model.addAttribute("exchange", exchange);
 
-		return redirect(VIEW,"index");
+		return redirect(VIEW+"index");
 	}
 
 	/**

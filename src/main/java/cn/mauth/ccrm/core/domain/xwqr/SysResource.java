@@ -23,16 +23,10 @@ public class SysResource implements Serializable {
 	@JoinColumn(name = "parent_id")
 	private SysResource parent;
 	//一个父节点对应多个资源：1：n
-	@OneToMany
+	@OneToMany(fetch = FetchType.EAGER)
 	@JoinColumn(name = "parent_id")
 	private Set<SysResource> children;
-	//资源与角色关系是：n:n
-	@ManyToMany
-	@JoinTable(name = "sys_resource_role",
-			joinColumns = {@JoinColumn(name = "resource_id")},
-			inverseJoinColumns = {@JoinColumn(name = "role_id")})
-	private Set<SysRole> roles;
-	
+
 	//主页
 	private Integer indexStatus;
 	
@@ -120,13 +114,6 @@ public class SysResource implements Serializable {
 		this.children = children;
 	}
 
-	public Set<SysRole> getRoles() {
-		return roles;
-	}
-
-	public void setRoles(Set<SysRole> roles) {
-		this.roles = roles;
-	}
 
 	public Integer getIndexStatus() {
 		return indexStatus;

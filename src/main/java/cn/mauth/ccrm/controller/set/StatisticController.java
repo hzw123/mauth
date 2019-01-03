@@ -25,40 +25,40 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/statistic")
 public class StatisticController extends BaseController {
 
-	private static final String VIEW="/statistic/";
+	private static final String VIEW="statistic/";
 	@RequestMapping("/project")
 	public String project(){
-		return redirect(VIEW,"project");
+		return redirect(VIEW+"project");
 	}
 
 	@RequestMapping("/payway")
 	public String payway(){
-		return redirect(VIEW,"payway");
+		return redirect(VIEW+"payway");
 	}
 
 	@RequestMapping("/memstorm")
 	public String memstorm(){
-		return redirect(VIEW,"memstorm");
+		return redirect(VIEW+"memstorm");
 	}
 
 	@RequestMapping("/artificer")
 	public String artificer(){
-		return redirect(VIEW,"artificer");
+		return redirect(VIEW+"artificer");
 	}
 
 	@RequestMapping("/memconsume")
 	public String memconsume(){
-		return redirect(VIEW,"memconsume");
+		return redirect(VIEW+"memconsume");
 	}
 
 	@RequestMapping("/dailyconsume")
 	public String dailyconsume(){
-		return redirect(VIEW,"dailyconsume");
+		return redirect(VIEW+"dailyconsume");
 	}
 
 	@RequestMapping("/dailydetail")
 	public String dailydetail(){
-		return redirect(VIEW,"dailydetail");
+		return redirect(VIEW+"dailydetail");
 	}
 
 	@RequestMapping("/projectchart")

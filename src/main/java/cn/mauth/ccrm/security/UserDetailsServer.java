@@ -38,7 +38,7 @@ public class UserDetailsServer implements UserDetailsService{
 	}
 	 //取得用户的权限  
     private Set<GrantedAuthority> obtionGrantedAuthorities(SysUser user) {
-        Set<GrantedAuthority> authSet = new HashSet<GrantedAuthority>();  
+        Set<GrantedAuthority> authSet = new HashSet<>();
         Set<SysRole> roles = user.getRoles();
         if(null!=roles&&roles.size()>0){
         	for(SysRole role : roles) {

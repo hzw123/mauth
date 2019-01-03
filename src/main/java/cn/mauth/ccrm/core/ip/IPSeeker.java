@@ -47,8 +47,8 @@ public class IPSeeker {
     private byte[] b3;   
        
     public IPSeeker()  {   
-    	 this.INSTALL_DIR= PathUtil.getWebRootPath()+"/WEB-INF/";
-        ipCache = new HashMap<String, IPLocation>();   
+        this.INSTALL_DIR= PathUtil.getWebRootPath()+"/WEB-INF/";
+        ipCache = new HashMap<>();
         loc = new IPLocation();   
         buf = new byte[100];   
         b4 = new byte[4];   

@@ -22,18 +22,18 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/printer")
 public class PrinterController extends BaseController{
-	private static final String VIEW="/set/printer/";
+	private static final String VIEW="set/printer/";
 	@Autowired
 	private PrinterServer printerServer;
 
 	@RequestMapping("/edit")
 	public String edit() {
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 	@RequestMapping("/index")
 	public String index() {
-		return redirect(VIEW,"index");
+		return redirect(VIEW+"index");
 	}
 
 	@PostMapping("/save")
@@ -72,7 +72,7 @@ public class PrinterController extends BaseController{
 		if(dbid>0){
 			this.printerServer.deleteById(dbid);
 		}
-		return redirect(VIEW,"index");
+		return redirect(VIEW+"index");
 	}
 
 	@RequestMapping("/changeState")
@@ -80,7 +80,7 @@ public class PrinterController extends BaseController{
 		if(dbid>0){
 			this.printerServer.UpdateState(dbid, state);
 		}
-		return redirect(VIEW,"index");
+		return redirect(VIEW+"index");
 	}
 	
 }

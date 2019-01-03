@@ -15,7 +15,7 @@
         </div>
         <div class="weui-msg__opr-area">
             <p class="weui-btn-area">
-            	<c:if test="${!empty(sessionScope.member) }">
+            	<c:if test="${!empty(member) }">
 	            	 <a href="${ctx}/memberWechat/memberCenter" class="weui-btn weui-btn_primary">会员中心</a>
             	</c:if>
                 <a href="javascript:history.back();" class="weui-btn weui-btn_default">返回</a>

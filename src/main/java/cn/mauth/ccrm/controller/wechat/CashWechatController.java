@@ -59,7 +59,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/cash")
 public class CashWechatController extends BaseController{
 
-	private static final String VIEW="/wechat/cash/";
+	private static final String VIEW="wechat/cash/";
 	@Autowired
 	private WeixinGzuserinfoServer weixinGzuserinfoServer;
 	@Autowired
@@ -94,7 +94,7 @@ public class CashWechatController extends BaseController{
 		try {
 			if(roomId<0){
 				model.addAttribute("error", "无开单记录");
-				return redirect(VIEW,"error");
+				return redirect(VIEW+"error");
 			}
 			SysRoom room = roomServer.get(roomId);
 			model.addAttribute("room", room);
@@ -104,11 +104,11 @@ public class CashWechatController extends BaseController{
 			MemStartWriting startWriting = this.startWritingServer.get(orderId);
 			if(null==startWriting){
 				model.addAttribute("error", room.getName()+"无开单记录");
-				return redirect(VIEW,"error");
+				return redirect(VIEW+"error");
 			}
 			if(startWriting.getState()==CommonState.Normal){
 				model.addAttribute("error", room.getName()+"已经付款");
-				return redirect(VIEW,"error");
+				return redirect(VIEW+"error");
 			}
 			Mem member = getMember(request);
 			if(null==member){
@@ -116,23 +116,23 @@ public class CashWechatController extends BaseController{
 				Integer enterpriseId = room.getEnterpriseId();
 				if(null==enterpriseId){
 					model.addAttribute("error", room.getName()+"无分店记录");
-					return redirect(VIEW,"error");
+					return redirect(VIEW+"error");
 				}
 				WeixinAccount weixinAccount = weixinAccountServer.findByEnterpriseId(enterpriseId);
 				if(weixinAccount==null){
 					model.addAttribute("error", room.getName()+"无公众号信息");
-					return redirect(VIEW,"error");
+					return redirect(VIEW+"error");
 				}
 				String url = getUrl(request,room.getDbid(),weixinAccount);
 				model.addAttribute("url", url);
-				return redirect(VIEW,"temp");
+				return redirect(VIEW+"temp");
 			}
 			model.addAttribute("startWriting", startWriting);
 			model.addAttribute("member", member);
 		} catch (Exception e) {
 			log.error(e.getMessage());
 		}
-		return redirect(VIEW,"roomCash");
+		return redirect(VIEW+"roomCash");
 	}
 
 	/**
@@ -144,16 +144,16 @@ public class CashWechatController extends BaseController{
 		try {
 			if(startWritingId<0){
 				model.addAttribute("error","无开单记录");
-				return redirect(VIEW,"error");
+				return redirect(VIEW+"error");
 			}
 			MemStartWriting startWriting = startWritingServer.get(startWritingId);
 			if(startWriting==null){
 				model.addAttribute("error","无开单记录");
-				return redirect(VIEW,"error");
+				return redirect(VIEW+"error");
 			}
 			if(startWritingId<0){
 				model.addAttribute("error","无开单记录");
-				return redirect(VIEW,"error");
+				return redirect(VIEW+"error");
 			}
 			Integer roomId = startWriting.getRoomId();
 			SysRoom room = roomServer.get(roomId);
@@ -162,11 +162,11 @@ public class CashWechatController extends BaseController{
 			Mem member = memberServer.get(memberId);
 			if(member==null){
 				model.addAttribute("error", room.getName()+"无开单记录");
-				return redirect(VIEW,"error");
+				return redirect(VIEW+"error");
 			}
 			if(startWriting.getState()==CommonState.Normal){
 				model.addAttribute("error", room.getName()+"已经付款");
-				return redirect(VIEW,"error");
+				return redirect(VIEW+"error");
 			}
 			
 			log.error("4获取到会员信息："+member.getName());
@@ -244,9 +244,9 @@ public class CashWechatController extends BaseController{
 			e.printStackTrace();
 			log.error(e.getMessage());
 			model.addAttribute("error", "系统发生异常");
-			return redirect(VIEW,"error");
+			return redirect(VIEW+"error");
 		}
-		return redirect(VIEW,"cash");
+		return redirect(VIEW+"cash");
 	}
 
 	/**
@@ -259,13 +259,13 @@ public class CashWechatController extends BaseController{
 			MemStartWriting startWriting2 = startWritingServer.get(dbid);
 			if(startWriting2==null){
 				model.addAttribute("error","无开单记录");
-				return redirect(VIEW,"error");
+				return redirect(VIEW+"error");
 			}
 			model.addAttribute("startWriting", startWriting2);
 			Mem member = memberServer.get(memberId);
 			if(member==null){
 				model.addAttribute("error","无会员记录");
-				return redirect(VIEW,"error");
+				return redirect(VIEW+"error");
 			}
 			model.addAttribute("member", member);
 			MemCard memberCard = member.getMemberCard();
@@ -278,7 +278,7 @@ public class CashWechatController extends BaseController{
 			log.error(e.getMessage());
 			e.printStackTrace();
 		}
-		return redirect(VIEW,"onceCash");
+		return redirect(VIEW+"onceCash");
 	}
 
 	/**
@@ -299,7 +299,7 @@ public class CashWechatController extends BaseController{
 		List<DiscountItem> discountItems=gson.fromJson(discountItemJson,new TypeToken<List<DiscountItem>>() {}.getType());
 		if(null==discountItems||discountItems.isEmpty()){
 			renderErrorMsg(new Throwable("无项目，请先选择项目"), "");
-			return redirect(VIEW,"error");
+			return redirect(VIEW+"error");
 		}
 		
 		List<PaywayModel> payways=new ArrayList<PaywayModel>();
@@ -313,11 +313,11 @@ public class CashWechatController extends BaseController{
 		ResultModel resultModel= this.startWritingServer.CheckOut(checkOutModel);
 		if(resultModel.getCode()!=0){
 			model.addAttribute("error",resultModel.getMessage());
-			return redirect(VIEW,"error");
+			return redirect(VIEW+"error");
 		}
 		else{
 			model.addAttribute("startWritingId", startWritingId);
-			return redirect(VIEW,"redTip");
+			return redirect(VIEW+"redTip");
 		}
 	}
 
@@ -340,7 +340,7 @@ public class CashWechatController extends BaseController{
 		List<DiscountItem> discountItems=gson.fromJson(discountItemJson,new TypeToken<List<DiscountItem>>() {}.getType());
 		if(null==discountItems||discountItems.isEmpty()){
 			renderErrorMsg(new Throwable("无项目，请先选择项目"), "");
-			return redirect(VIEW,"error");
+			return redirect(VIEW+"error");
 		}
 		
 		List<PaywayModel> payways=new ArrayList<PaywayModel>();
@@ -354,11 +354,11 @@ public class CashWechatController extends BaseController{
 		ResultModel resultModel= this.startWritingServer.CheckOut(checkOutModel);
 		if(resultModel.getCode()!=0){
 			model.addAttribute("error",resultModel.getMessage());
-			return redirect(VIEW,"error");
+			return redirect(VIEW+"error");
 		}
 		else{
 			model.addAttribute("startWritingId", startWritingId);
-			return redirect(VIEW,"redTip");
+			return redirect(VIEW+"redTip");
 		}
 	}
 
@@ -369,7 +369,7 @@ public class CashWechatController extends BaseController{
 
 		model.addAttribute("startWriting", startWriting2);
 
-		return redirect(VIEW,"tip");
+		return redirect(VIEW+"tip");
 	}
 
 	@RequestMapping("/saveTip")
@@ -383,10 +383,10 @@ public class CashWechatController extends BaseController{
 		ResultModel result=this.startWritingServer.Tip(startWritingId, tipMoney, evaluate,note);
 		if(result.getCode()!=0){;
 			model.addAttribute("error", result.getMessage());
-			return redirect(VIEW,"error");
+			return redirect(VIEW+"error");
 		}
 		else{
-			return redirect(VIEW,"success");
+			return redirect(VIEW+"success");
 		}
 	}
 	
@@ -404,17 +404,17 @@ public class CashWechatController extends BaseController{
 				SysRoom room = roomServer.get(roomId);
 				if(room==null){
 					model.addAttribute("error", "无房间信息");
-					return redirect(VIEW,"error");
+					return redirect(VIEW+"error");
 				}
 				Integer enterpriseId = room.getEnterpriseId();
 				if(enterpriseId==null){
 					model.addAttribute("error", "无分店信息");
-					return redirect(VIEW,"error");
+					return redirect(VIEW+"error");
 				}
 				WeixinAccount weixinAccount = weixinAccountServer.findByEnterpriseId(enterpriseId);
 				if(null==weixinAccount){
 					model.addAttribute("error", "无公众号信息");
-					return redirect(VIEW,"error");
+					return redirect(VIEW+"error");
 					
 				}
 				//获取用户权限 返回openId
@@ -423,7 +423,7 @@ public class CashWechatController extends BaseController{
 				String resultString = jsonObject.toString();
 				log.error("resultString:"+resultString);
 				if(resultString.contains("invalid")){
-					return redirect(VIEW,"error");
+					return redirect(VIEW+"error");
 				}else{
 					String access_token = jsonObject.getString("access_token");
 					Integer expires_in = jsonObject.getInteger("expires_in");
@@ -436,13 +436,13 @@ public class CashWechatController extends BaseController{
 					List<WeixinGzuserInfo> weixinGzuserinfos = weixinGzuserinfoServer.getRepository().findByOpenid(openid);
 					if(weixinGzuserinfos.isEmpty()){
 						model.addAttribute("error", "无关注会员信息，请先关注【】");
-						return redirect(VIEW,"error");
+						return redirect(VIEW+"error");
 					}
 					WeixinGzuserInfo weixinGzuserinfo = weixinGzuserinfos.get(0);
 					Mem member = weixinGzuserinfo.getMember();
 					if(null==member){
 						model.addAttribute("error", "无关注会员信息，请先关注【】");
-						return redirect(VIEW,"error");
+						return redirect(VIEW+"error");
 					}
 					else{
 						//设置粉丝信息到session
@@ -454,14 +454,14 @@ public class CashWechatController extends BaseController{
 					}
 				}
 			}else{
-				return redirect(VIEW,"error");
+				return redirect(VIEW+"error");
 			}
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 			log.error(e.getMessage());
 		}
-		return redirect(VIEW,"error");
+		return redirect(VIEW+"error");
 	}
 
 	/**

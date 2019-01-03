@@ -39,7 +39,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/onlineBooking")
 public class OnlineBookingController extends BaseController{
 
-	private static final String VIEW="/member/onlineBooking/";
+	private static final String VIEW="member/onlineBooking/";
 	@Autowired
 	private OnlineBookingServer onlineBookingServer;
 	@Autowired
@@ -59,7 +59,7 @@ public class OnlineBookingController extends BaseController{
 	 */
  	@RequestMapping("/queryList")
 	public String queryList(){
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 	@RequestMapping("/handle")
@@ -69,7 +69,7 @@ public class OnlineBookingController extends BaseController{
 			MemOnlineBooking memOnlineBooking = onlineBookingServer.get(dbid);
 			model.addAttribute("model", memOnlineBooking);
 		}
-		return redirect(VIEW,"handle");
+		return redirect(VIEW+"handle");
 	}
 
 	@RequestMapping("/saveHandle")
@@ -120,7 +120,7 @@ public class OnlineBookingController extends BaseController{
 		List<SysArtificer> artificers = artificerServer.getRepository().findByEnterpriseId(enterprise.getDbid());
 		model.addAttribute("artificers", artificers);
 
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 	@PostMapping("/save")

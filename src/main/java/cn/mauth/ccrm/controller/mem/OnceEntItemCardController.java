@@ -34,7 +34,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/onceEntItemCard")
 public class OnceEntItemCardController extends BaseController{
-	private static final String VIEW="/member/onceEntItemCard/";
+	private static final String VIEW="member/onceEntItemCard/";
 	@Autowired
 	private OnceEntItemCardServer onceEntItemCardServer;
 	@Autowired
@@ -45,7 +45,7 @@ public class OnceEntItemCardController extends BaseController{
 
 	@RequestMapping("/queryList")
 	public String queryList() throws Exception {
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 	@RequestMapping("/queryJson")
@@ -76,7 +76,7 @@ public class OnceEntItemCardController extends BaseController{
 
 		model.addAttribute("entItems", entItems);
 
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 
@@ -92,7 +92,7 @@ public class OnceEntItemCardController extends BaseController{
 
 		model.addAttribute("onceEntItemCard", memOnceEntItemCard);
 
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 	@RequestMapping("/selectItem")
@@ -123,7 +123,7 @@ public class OnceEntItemCardController extends BaseController{
 		}
 		model.addAttribute("maps",maps);
 		model.addAttribute("countCardId",id);
-		return redirect(VIEW,"selectItem");
+		return redirect(VIEW+"selectItem");
 	}
 
 	@RequestMapping("/saveSelectItem")

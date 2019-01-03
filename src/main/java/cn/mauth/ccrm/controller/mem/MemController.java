@@ -52,7 +52,7 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping("/member")
 public class MemController extends BaseController {
 
-	private static final String VIEW="/member/member/";
+	private static final String VIEW="member/member/";
 	private String[] allowFiles = { ".xls", ".xlsx" };
 	// 文件大小限制，单位KB
 	private int maxSize = 10240;
@@ -81,7 +81,7 @@ public class MemController extends BaseController {
 
  	@RequestMapping("/queryList")
 	public String queryList(){
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 	@RequestMapping("/queryJson")
@@ -133,7 +133,7 @@ public class MemController extends BaseController {
 			}
 		} catch (Exception e) {
 		}
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 	/**
@@ -149,7 +149,7 @@ public class MemController extends BaseController {
 			Mem member = memberServer.get(dbid);
 			model.addAttribute("member", member);
 		}
-		return redirect(VIEW,"editRoom");
+		return redirect(VIEW+"editRoom");
 	}
 
 	/**
@@ -172,11 +172,11 @@ public class MemController extends BaseController {
 			}
 			sql=sql+" order by createTime DESC ";
 			Page<Mem> page=memberServer.pageSql(sql,params,pageable,Sort.by(Sort.Direction.DESC,"createTime"));
-			model.addAttribute("templates", page);
+			model.addAttribute("page", page);
 		} catch (Exception e) {
 			log.error(e.getMessage());
 		}
-		return redirect(VIEW,"changeMember");
+		return redirect(VIEW+"changeMember");
 	}
 
 	@PostMapping("/save")
@@ -355,7 +355,7 @@ public class MemController extends BaseController {
 
 		model.addAttribute("memberCards", memberCards);
 
-		return redirect(VIEW,"changeMemberCard");
+		return redirect(VIEW+"changeMemberCard");
 	}
 
 	/**
@@ -420,7 +420,7 @@ public class MemController extends BaseController {
 
 		model.addAttribute("member", mem);
 
-		return redirect(VIEW,"changeBalance");
+		return redirect(VIEW+"changeBalance");
 	}
 
 	@RequestMapping("/changePoint")
@@ -430,7 +430,7 @@ public class MemController extends BaseController {
 
 		model.addAttribute("member", mem);
 
-		return redirect(VIEW,"changePoint");
+		return redirect(VIEW+"changePoint");
 	}
 
 	@RequestMapping("/saveChanageBalance")
@@ -571,7 +571,7 @@ public class MemController extends BaseController {
 			e.printStackTrace();
 			log.error(e.getMessage());
 		}
-		return redirect(VIEW,"detail");
+		return redirect(VIEW+"detail");
 	}
 
 	/**
@@ -622,7 +622,7 @@ public class MemController extends BaseController {
 
 		model.addAttribute("member", mem);
 
-		return redirect(VIEW,"memberCancelFrozon");
+		return redirect(VIEW+"memberCancelFrozon");
 	}
 
 	/**
@@ -690,7 +690,7 @@ public class MemController extends BaseController {
 		} catch (Exception e) {
 			log.error(e.getMessage());
 		}
-		return redirect(VIEW,"memberCancel");
+		return redirect(VIEW+"memberCancel");
 	}
 
 	/**
@@ -720,7 +720,7 @@ public class MemController extends BaseController {
 
 	@RequestMapping("/importExcel")
 	public String importExcel() throws Exception {
-		return redirect(VIEW,"importExcel");
+		return redirect(VIEW+"importExcel");
 	}
 
 	@RequestMapping("/saveImportExcel")
@@ -762,32 +762,32 @@ public class MemController extends BaseController {
 								}
 								str=str+"</table>";
 							   model.addAttribute("error", str);
-							   return redirect(VIEW,"error");
+							   return redirect(VIEW+"error");
 							}
 						} else {
 							model.addAttribute("error","文件模块错误!");
-							return redirect(VIEW,"error");
+							return redirect(VIEW+"error");
 						}
 					} else {
 						model.addAttribute("error","文件内容为空!");
-						return redirect(VIEW,"error");
+						return redirect(VIEW+"error");
 					}
 				} else {
 					model.addAttribute("error","上传文件类型错误!");
-					return redirect(VIEW,"error");
+					return redirect(VIEW+"error");
 				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("error","上传失败!");
-			return redirect(VIEW,"error");
+			return redirect(VIEW+"error");
 		}
 		if (dataFile == null && !dataFile.exists()) {
 			model.addAttribute("error","上传失败!");
-			return redirect(VIEW,"error");
+			return redirect(VIEW+"error");
 		}
 		model.addAttribute("success","上传数据成功!");
-		return redirect(VIEW,"success");
+		return redirect(VIEW+"success");
 	}
 
 	@ResponseBody

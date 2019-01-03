@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/newsItemWechat")
 public class NewsItemWechatController extends BaseController{
 
-	private static final String VIEW="/wechat/newsItemWechat/";
+	private static final String VIEW="wechat/newsItemWechat/";
 	@Autowired
 	private WeixinNewsitemServer weixinNewsitemServer;
 
@@ -29,6 +29,6 @@ public class NewsItemWechatController extends BaseController{
 		weixinNewsitem.setReadNum(readNum);
 		weixinNewsitemServer.save(weixinNewsitem);
 		model.addAttribute("weixinNewsitem", weixinNewsitem);
-		return redirect(VIEW,"readNewsItem");
+		return redirect(VIEW+"readNewsItem");
 	}
 }

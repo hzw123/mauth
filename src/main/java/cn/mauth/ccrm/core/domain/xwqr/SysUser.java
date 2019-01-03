@@ -95,7 +95,6 @@ public class SysUser implements UserDetails, Serializable {
 	//1、为启用；2、为停用
 	@Column(length = 20)
 	private Integer userState;
-	@Column(length = 20)
 	private boolean state;
 	//管理员类型：1、为管理员，2、位普通用户
 	@Column(length = 20)
@@ -108,7 +107,7 @@ public class SysUser implements UserDetails, Serializable {
 	@ManyToOne
 	@JoinColumn(name = "parent_id")
 	private SysUser parent;
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "sys_user_role",
 			joinColumns = {@JoinColumn(name = "user_id")},
 			inverseJoinColumns = {@JoinColumn(name = "role_id")})

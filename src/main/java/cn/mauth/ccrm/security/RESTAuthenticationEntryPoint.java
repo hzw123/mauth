@@ -24,9 +24,11 @@ public class RESTAuthenticationEntryPoint implements AuthenticationEntryPoint {
 			throws IOException, ServletException {
 		String accept = request.getHeader(HttpHeaders.ACCEPT);
 		if (accept != null) {
-			if (request.getHeader("accept").indexOf(MediaType.TEXT_HTML.toString()) >= 0) {
-				redirectStrategy.sendRedirect(request, response, "/login");
-			} else {
+			String at=request.getHeader("accept");
+
+			if (at.indexOf(MediaType.TEXT_HTML.toString()) >= 0) {
+				redirectStrategy.sendRedirect(request, response, "/toLogin");
+			}else {
 				response.sendError(HttpServletResponse.SC_UNAUTHORIZED, authException.getMessage());
 			}
 		} else {

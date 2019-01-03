@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/enterprise")
 public class EnterpriseController extends BaseController{
 
-	private static final String VIEW="/sys/enterprise/";
+	private static final String VIEW="sys/enterprise/";
 	@Autowired
 	private DepartmentServer departmentServer;
 
@@ -47,10 +47,10 @@ public class EnterpriseController extends BaseController{
 			return null;
 		},enterpriseServer.getPageRequest(pageable)));
 
-		model.addAttribute("templates", page);
+		model.addAttribute("page", page);
 		model.addAttribute("enterpriseName", enterpriseName);
 
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 	/**
@@ -67,7 +67,7 @@ public class EnterpriseController extends BaseController{
 
 		model.addAttribute("enterprise", enterprise2);
 
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 	/**
@@ -86,7 +86,7 @@ public class EnterpriseController extends BaseController{
 				model.addAttribute("enterprise", enterprise4);
 			}
 		}
-		return redirect(VIEW,"enterprise");
+		return redirect(VIEW+"enterprise");
 	}
 
 	/**

@@ -6,6 +6,7 @@ import cn.mauth.ccrm.core.util.Md5;
 import cn.mauth.ccrm.core.domain.xwqr.SysLoginLog;
 import cn.mauth.ccrm.core.domain.xwqr.SysRole;
 import cn.mauth.ccrm.core.domain.xwqr.SysUser;
+import cn.mauth.ccrm.core.util.SecurityUserHolder;
 import cn.mauth.ccrm.server.xwqr.LoginLogServer;
 import cn.mauth.ccrm.server.xwqr.UserServer;
 import org.slf4j.Logger;
@@ -83,9 +84,9 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         }
 
         //保存登录日志
-        saveLoginLog( user);
+        saveLoginLog(user);
 
-
+        HttpUtil.setSysUser(user);
         return new UsernamePasswordAuthenticationToken(name, password, grantedAuths);
     }
 
@@ -110,17 +111,15 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         loginLog.setIpAddress(ip);
         loginLog.setSessionId(HttpUtil.getSession().getId());
         loginLog.setUserName(user.getUserId());
-        IPSeeker ipSeeker = new IPSeeker();
-
-        if (ipSeeker.getCountry(ip).contains("局域网")) {
-            loginLog.setLoginAddress(ipSeeker.getCountry(ip));
-        } else {
-            loginLog.setLoginAddress(ipSeeker.getCountry(ip) + ":" + ipSeeker.getArea(ip));
-        }
+//        IPSeeker ipSeeker = new IPSeeker();
+//
+//        if (ipSeeker.getCountry(ip).contains("局域网")) {
+//            loginLog.setLoginAddress(ipSeeker.getCountry(ip));
+//        } else {
+//            loginLog.setLoginAddress(ipSeeker.getCountry(ip) + ":" + ipSeeker.getArea(ip));
+//        }
 
         loginLogServer.save(loginLog);
-
-        HttpUtil.setSession("user", user);
 
     }
 

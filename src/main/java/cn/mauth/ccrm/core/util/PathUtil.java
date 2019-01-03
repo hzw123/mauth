@@ -35,8 +35,6 @@ public class PathUtil {
 
 	/**
 	 * 用于获取web根目录(即WebRoot目录)
-	 * 
-	 * @return
 	 */
 	public static File getWebRootFile() {
 		return new File(getWebRootPath());
@@ -44,15 +42,16 @@ public class PathUtil {
 
 	/**
 	 * 用于获取web根目录(即WebRoot目录)
-	 * 
-	 * @return
 	 */
 	public static String getWebRootPath() {
 		// 因为类名为"PathUtil"，因此" PathUtil.class"一定能找到
-		String result = PathUtil.class.getResource("PathUtil.class").toString();
+		String result = PathUtil.class.getResource("").toString();
 		int index = result.indexOf("WEB-INF");
 		if (index == -1) {
 			index = result.indexOf("bin");
+		}
+		if(index == -1){
+			index =result.indexOf("classes");
 		}
 
 		if (index != -1) {
@@ -84,9 +83,7 @@ public class PathUtil {
 	/**
 	 * 用于获取web根目录(即WebRoot目录)的名称
 	 * 
-	 * @param args
 	 */
-
 	public static String getWebRootName() {
 		return getWebRootFile().getName();
 	}

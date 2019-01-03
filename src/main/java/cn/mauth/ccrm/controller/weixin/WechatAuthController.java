@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/wechatAuth")
 public class WechatAuthController extends BaseController{
 
-	private static final String VIEW="/weixin/wechatAuth/";
+	private static final String VIEW="weixin/wechatAuth/";
 	@Autowired
 	private WeixinAccountServer weixinAccountServer;
 	@Autowired
@@ -40,7 +40,7 @@ public class WechatAuthController extends BaseController{
 		log.info("================weixinUrl:"+weixinUrl);
 
 		model.addAttribute("weixinUrl", weixinUrl);
-		return redirect(VIEW,"oAuth2");
+		return redirect(VIEW+"oAuth2");
 	}
 
 	/**
@@ -57,19 +57,19 @@ public class WechatAuthController extends BaseController{
 				weixinAccount = weixinAccountServer.getRepository().findByCode(weixinCode);
 			}else{
 				model.addAttribute("error","连接地址未配置code参数，请确认！");
-				return redirect(VIEW,"error");
+				return redirect(VIEW+"error");
 			}
 			//微信端返回连接CODE参数
 			String code = request.getParameter("code");
 
 			if(null==code){
 				model.addAttribute("error","微信端返回CODE参数错误！");
-				return redirect(VIEW,"error");
+				return redirect(VIEW+"error");
 			}
 
 			if(null==weixinAccount){
 				model.addAttribute("error","连接地址配置code参数错误，系统不存在改code参数，请确认！！");
-				return redirect(VIEW,"error");
+				return redirect(VIEW+"error");
 			}
 
 			String weixinUrl = WeixinUtil.oauth2Access.replace("APPID", weixinAccount.getAccountappid()).replace("SECRET", weixinAccount.getAccountappsecret()).replace("CODE", code);
@@ -82,7 +82,7 @@ public class WechatAuthController extends BaseController{
 					String resultString = jsonObject.toString();
 					if(resultString.contains("errcode")){
 						model.addAttribute("error","错误码："+resultString);
-						return redirect(VIEW,"error");
+						return redirect(VIEW+"error");
 					}else{
 						log.error("httpRequest:"+jsonObject.toString());
 						String openId = jsonObject.getString("openid");
@@ -119,7 +119,7 @@ public class WechatAuthController extends BaseController{
 			e.printStackTrace();
 			log.error(e.getMessage());
 		}
-		return redirect(VIEW,"outh2Remote");
+		return redirect(VIEW+"outh2Remote");
 	}
 	/** 
      * 构造带员工身份信息的URL 

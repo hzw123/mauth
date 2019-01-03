@@ -7512,7 +7512,7 @@ Axis.prototype = {
 			}
 		}
 
-		// In full view, displaying the reset zoom button is not required
+		// In full VIEW+ displaying the reset zoom button is not required
 		this.displayBtn = newMin !== UNDEFINED || newMax !== UNDEFINED;
 
 		// Do it

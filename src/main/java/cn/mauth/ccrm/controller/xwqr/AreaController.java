@@ -23,13 +23,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/area")
 public class AreaController extends BaseController{
 
-	private static final String VIEW="/sys/area/";
+	private static final String VIEW="sys/area/";
 	@Autowired
 	private AreaServer areaServer;
 
 	@RequestMapping("/queryList")
 	public String queryList(Model model,Integer parentId){
-		if(parentId>0){
+		if(parentId!=null&&parentId>0){
 			List<SysArea> areas = areaServer.findByParentId(parentId);
 			model.addAttribute("areas", areas);
 			model.addAttribute("parent", areaServer.get(parentId));
@@ -39,17 +39,17 @@ public class AreaController extends BaseController{
 			model.addAttribute("parent", null);
 		}
 		
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 
 	@RequestMapping("/add")
 	public String add(Integer parentId,Model model) throws Exception {
-		if(parentId>0){
+		if(parentId!=null&&parentId>0){
 			SysArea area = areaServer.get(parentId);
 			model.addAttribute("parent", area);
 		}
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 
@@ -62,7 +62,7 @@ public class AreaController extends BaseController{
 				model.addAttribute("parent", area2.getArea());
 			}
 		}
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 
@@ -97,7 +97,6 @@ public class AreaController extends BaseController{
 			return ;
 		}
 		renderMsg("/area/queryList", "保存数据成功！");
-		return ;
 	}
 
 
@@ -123,7 +122,7 @@ public class AreaController extends BaseController{
 	@RequestMapping("/ajaxArea")
 	public void ajaxArea(Integer parentId) throws Exception {
 		try{
-			if(parentId>0){
+			if(parentId!=null&&parentId>0){
 				List<SysArea> areas = areaServer.findByParentId(parentId);
 				StringBuffer buffer=new StringBuffer();
 				if(null!=areas&&areas.size()>0){
@@ -148,7 +147,7 @@ public class AreaController extends BaseController{
 	@RequestMapping("/ajaxAreaCustomerFile")
 	public void ajaxAreaCustomerFile(Integer parentId) throws Exception {
 		try{
-			if(parentId>0){
+			if(parentId!=null&&parentId>0){
 				List<SysArea> areas = areaServer.findByParentId(parentId);
 				StringBuffer buffer=new StringBuffer();
 				if(null!=areas&&areas.size()>0){
@@ -195,7 +194,7 @@ public class AreaController extends BaseController{
 	 */
 	@RequestMapping("/ajaxAreaDistributor")
 	public void ajaxAreaDistributor(Integer parentId,String areaLabel,String companyAreaId,String areaId )  {
-		if(parentId>0){
+		if(parentId!=null&&parentId>0){
 			List<SysArea> areas = areaServer.findByParentId(parentId);
 			StringBuffer buffer=new StringBuffer();
 			if(null!=areas&&areas.size()>0){

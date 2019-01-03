@@ -33,15 +33,15 @@
     </div>
     <div class="layui-col-xs3" >
     	<form name="searchPageForm" id="searchPageForm" action="${ctx}/loginLog/queryList" method="post">
-	     <input type="hidden" id="currentPage" name="currentPage" value='${page.currentPageNo}'>
-	     <input type="hidden" id="paramPageSize" name="pageSize" value='${page.pageSize}'>
-		<%--  <table>
-			<tr>
-				<td>登录用户：</td>
-				<td><input type="text" id="userName" name="userName" class="input-small field" value="${param.userName}"></input></td>
-				<td><input type="submit" value="查询"></input></td>
-			</tr>
-		 </table> --%>
+			 <input type="hidden" id="currentPage" name="page" value='${page.page}'>
+			 <input type="hidden" id="paramPageSize" name="size" value='${page.size}'>
+			 <table>
+				<tr>
+					<td>登录用户：</td>
+					<td><input type="text" id="userName" name="userName" class="input-small field"/></td>
+					<td><input type="submit" value="查询"/></td>
+				</tr>
+			 </table>
 		</form>
     </div>
 </div>
@@ -60,26 +60,26 @@
 			<td class="span3" style="text-align: center;">sessionId</td>
 		</tr>
 	</thead>
-	<c:if test="${empty(page.result)||page.result==null }" var="status">
-			<tr>
-				<td colspan="7" style="text-align: center;">
-					无数据
-				</td>
-			</tr>
-		</c:if>
-	<c:if test="${status==false }">
-		<c:forEach var="loginLog" items="${page.result }">
-			<tr height="32" align="center">
-				<td><input type='checkbox' name="id" id="id1" value="${loginLog.dbid }"/></td>
-				<td>${loginLog.userId }</td>
-				<td>${loginLog.userName }</td>
-				<td>${loginLog.loginDate }</td>
-				<td>${loginLog.ipAddress }</td>
-				<td>${loginLog.loginAddress }</td>
-				<td>${loginLog.sessionId }</td>
-			</tr>
-		</c:forEach>
-	</c:if>
+	<#if !(page.result??)>
+	    <tr>
+            <td colspan="7" style="text-align: center;">
+                无数据
+            </td>
+        </tr>
+	</#if>
+	<#if status==false>
+	    <#list page.result as loginLog>
+	        <tr height="32" align="center">
+                <td><input type='checkbox' name="id" id="id1" value="${loginLog.dbid}"/></td>
+                <td>${loginLog.userId}</td>
+                <td>${loginLog.userName}</td>
+                <td>${(loginLog.loginDate?string('yyyy-MM-dd HH:mm:ss'))}</td>
+                <td>${loginLog.ipAddress}</td>
+                <td>${loginLog.loginAddress}</td>
+                <td>${loginLog.sessionId}</td>
+            </tr>
+	    </#list>
+	</#if>
 	</table>
 	<div id="page">
 	</div>

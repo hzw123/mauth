@@ -39,7 +39,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/weixinGzUserInfo")
 public class WeixinGzUserInfoController extends BaseController{
 
-	private static final String VIEW="/weixin/weixinGzUserInfo/";
+	private static final String VIEW="weixin/weixinGzUserInfo/";
 	@Autowired
 	private WeixinGzuserinfoServer weixinGzuserinfoServer;
 	@Autowired
@@ -191,7 +191,7 @@ public class WeixinGzUserInfoController extends BaseController{
 				return cb.and(param.toArray(new Predicate[param.size()]));
 			},weixinGzuserinfoServer.getPageRequest(pageable)));
 
-			model.addAttribute("templates", page);
+			model.addAttribute("page", page);
 
 			List<WeixinGroup> totalWeixinGroups = weixinGroupServer.getTotalWeixinGroups();
 			model.addAttribute("totalWeixinGroups", totalWeixinGroups);
@@ -209,7 +209,7 @@ public class WeixinGzUserInfoController extends BaseController{
 				model.addAttribute("selectParam", selectParam);
 			}
 		}
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 
@@ -247,13 +247,13 @@ public class WeixinGzUserInfoController extends BaseController{
 				model.addAttribute("selectParams", split);
 			}
 		}
-		return redirect(VIEW,"sendMessage");
+		return redirect(VIEW+"sendMessage");
 	}
 	
 
 	@RequestMapping("/add")
 	public String add() throws Exception {
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 	@RequestMapping("/view")
@@ -262,7 +262,7 @@ public class WeixinGzUserInfoController extends BaseController{
 			WeixinGzuserInfo weixinGzuserinfo2 = weixinGzuserinfoServer.get(dbid);
 			model.addAttribute("weixinGzUserInfo", weixinGzuserinfo2);
 		}
-		return redirect(VIEW,"view");
+		return redirect(VIEW+"view");
 	}
 
 	@RequestMapping("/edit")
@@ -273,7 +273,7 @@ public class WeixinGzUserInfoController extends BaseController{
 			model.addAttribute("weixinGzuserinfo", weixinGzuserinfo2);
 		}
 
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 

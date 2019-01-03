@@ -33,7 +33,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/weixinKeyWordRole")
 public class WeixinKeyWordRoleController extends BaseController{
 
-	private static final String VIEW="/weixin/weixinKeyWordRole/";
+	private static final String VIEW="weixin/weixinKeyWordRole/";
 	@Autowired
 	private WeixinKeyWordServer weixinKeyWordServer;
 	@Autowired
@@ -56,9 +56,9 @@ public class WeixinKeyWordRoleController extends BaseController{
 
 		Object page=Utils.pageResult(weixinKeyWordRoleServer.page(weixinAccount.getDbid(),pageable));
 
-		model.addAttribute("templates", page);
+		model.addAttribute("page", page);
 
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 	@RequestMapping("/querySubScriptList")
@@ -67,14 +67,14 @@ public class WeixinKeyWordRoleController extends BaseController{
 		WeixinAccount weixinAccount = SecurityUserHolder.getWeixinAccount(weixinAccountServer);
 
 		Object page=Utils.pageResult(weixinKeyWordRoleServer.page(weixinAccount.getDbid(),pageable));
-		model.addAttribute("templates", page);
+		model.addAttribute("page", page);
 
-		return redirect(VIEW,"subScriptList");
+		return redirect(VIEW+"subScriptList");
 	}
 
 	@RequestMapping("/add")
 	public String add() throws Exception {
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 
@@ -85,7 +85,7 @@ public class WeixinKeyWordRoleController extends BaseController{
 			model.addAttribute("weixinKeyWordRole", weixinKeyWordRole2);
 		}
 
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 
@@ -236,7 +236,7 @@ public class WeixinKeyWordRoleController extends BaseController{
 
 		model.addAttribute("weixinKeyWord", weixinKeyWord);
 
-		return  redirect(VIEW,"editSpread");
+		return  redirect(VIEW+"editSpread");
 	}
 
 	@RequestMapping("/saveEditSpread")
@@ -305,7 +305,7 @@ public class WeixinKeyWordRoleController extends BaseController{
 		WeixinKeyWord weixinKeyWord = weixinKeyWordServer.get(dbid);
 		model.addAttribute("weixinKeyWord", weixinKeyWord);
 
-		return redirect(VIEW,"editKey");
+		return redirect(VIEW+"editKey");
 	}
 
 	@RequestMapping("/saveEditKey")

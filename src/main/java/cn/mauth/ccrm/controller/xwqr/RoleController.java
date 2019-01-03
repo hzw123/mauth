@@ -30,7 +30,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/role")
 public class RoleController extends BaseController{
 
-	private static final String VIEW="/sys/role/";
+	private static final String VIEW="sys/role/";
 	@Autowired
 	private RoleServer roleServer;
 	@Autowired
@@ -39,8 +39,8 @@ public class RoleController extends BaseController{
 	@RequestMapping("/queryList")
 	public String queryList(Model model, Pageable pageable){
 		Object page= Utils.pageResult(roleServer.findAll(roleServer.getPageRequest(pageable, Sort.by("userType"))));
-		model.addAttribute("templates", page);
-		return redirect(VIEW,"list");
+		model.addAttribute("page", page);
+		return redirect(VIEW+"list");
 	}
 
 	@RequestMapping("/save")
@@ -60,7 +60,7 @@ public class RoleController extends BaseController{
 			SysRole role = roleServer.get(dbid);
 			model.addAttribute("role", role);
 		}
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 	@RequestMapping("/delete")
@@ -81,7 +81,7 @@ public class RoleController extends BaseController{
 			String resourceIds = getResourceIds(roleServer.get(dbid).getResources());
 			model.addAttribute("resourceIds", resourceIds);
 		}
-		return redirect(VIEW,"roleResource");
+		return redirect(VIEW+"roleResource");
 	}
 
 	@RequestMapping("/saveResource")

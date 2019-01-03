@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class WechatIndustryController extends BaseController{
 
-	private static final String VIEW="/weixin/wechatIndustry/";
+	private static final String VIEW="weixin/wechatIndustry/";
 	@Autowired
 	private WechatIndustryServer wechatIndustryServer;
 
@@ -31,7 +31,7 @@ public class WechatIndustryController extends BaseController{
 		}, Sort.by("num"));
 		model.addAttribute("industries", industries);
 
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 
@@ -42,7 +42,7 @@ public class WechatIndustryController extends BaseController{
 
  		model.addAttribute("cusString", cusString);
 
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 	@RequestMapping("/edit")
@@ -59,7 +59,7 @@ public class WechatIndustryController extends BaseController{
 			String cusString = wechatIndustryServer.getIndustry(null);
 			model.addAttribute("cusString", cusString);
 		}
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 	@PostMapping("/save")
@@ -126,7 +126,7 @@ public class WechatIndustryController extends BaseController{
 
 	@RequestMapping("/ajaxIndustry")
 	public void ajaxIndustry(Integer parentId){
-		if(parentId>0){
+		if(parentId!=null&&parentId>0){
 			List<WeixinIndustry> industrys = wechatIndustryServer.findByParentId(parentId);
 			StringBuffer buffer=new StringBuffer();
 			if(null!=industrys&&industrys.size()>0){

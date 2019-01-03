@@ -38,7 +38,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/weixinMenuentity")
 public class WeixinMenuentityController extends BaseController{
 
-	private static final String VIEW="/weixin/menuentity/";
+	private static final String VIEW="weixin/menuentity/";
 	@Autowired
 	private WeixinMenuentityServer weixinMenuentityServer;
 	@Autowired
@@ -69,7 +69,7 @@ public class WeixinMenuentityController extends BaseController{
 			model.addAttribute("weixinMenuentities", weixinMenuentities);
 		}
 
-		return redirect(VIEW,"list");
+		return redirect(VIEW+"list");
 	}
 
 	@RequestMapping("/add")
@@ -86,7 +86,7 @@ public class WeixinMenuentityController extends BaseController{
 			String productCateGorySelect = weixinMenuentityServer.getProductCateGorySelect(weixinAccount.getDbid(), null, groupId);
 			model.addAttribute("productCateGorySelect", productCateGorySelect);
 		}
-		return redirect(VIEW, "edit");
+		return redirect(VIEW+ "edit");
 	}
 	@RequestMapping("/edit")
 	public String edit(Integer dbid,Integer groupId,Model model){
@@ -109,7 +109,7 @@ public class WeixinMenuentityController extends BaseController{
 				WeixinMenuentityGroup weixinMenuentityGroup = weixinMenuentityGroupServer.get(groupId);
 				model.addAttribute("weixinMenuentityGroup", weixinMenuentityGroup);
 			}
-		return redirect(VIEW,"edit");
+		return redirect(VIEW+"edit");
 	}
 
 	@PostMapping("/save")
